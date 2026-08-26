@@ -19,4 +19,6 @@ outputs/*.md
 data/mnist/*.gz
 data/mnist/*.npy
 data/mnist/*.part
+data/california_housing/*
+!data/california_housing/.gitkeep
 models/*.npz

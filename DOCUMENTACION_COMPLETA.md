@@ -1,6 +1,6 @@
 # Proyectos académicos de inteligencia artificial en Python
 
-Este repositorio contiene cinco aplicaciones independientes de inteligencia
+Este repositorio contiene seis aplicaciones independientes de inteligencia
 artificial, aprendizaje por refuerzo (Reinforcement Learning, **RL**) y
 aprendizaje supervisado:
 
@@ -15,6 +15,8 @@ aprendizaje supervisado:
    usando una partición estratificada 70/30, fronteras de decisión y métricas.
 5. **Comparación de particiones Iris:** repite los tres clasificadores con
    divisiones 60/40, 70/30 y 80/20 para estudiar el efecto del tamaño muestral.
+6. **Regresión con California Housing:** compara modelos lineal, polinomial,
+   log-lineal y árbol mediante holdout y validación cruzada.
 
 Cada ejercicio tiene su propio archivo ejecutable, paquete, documentación,
 pruebas y resultados. De esta manera se puede estudiar o ejecutar uno sin
@@ -30,6 +32,7 @@ mezclar su lógica con la de los demás.
 - [Aplicación 3: Q-Learning](#aplicación-3-q-learning-y-comparación)
 - [Aplicación 4: clasificación de Iris](#aplicación-4-clasificación-de-iris)
 - [Aplicación 5: comparación de particiones](#aplicación-5-comparación-de-particiones-iris)
+- [Aplicación 6: regresión](#aplicación-6-regresión-con-california-housing)
 - [Pruebas y validación](#pruebas-y-validación)
 - [Solución de problemas](#solución-de-problemas)
 - [Cómo presentar el trabajo](#cómo-presentar-el-trabajo)
@@ -39,7 +42,7 @@ mezclar su lógica con la de los demás.
 | Componente | Resultado comprobado |
 |---|---:|
 | Python | 3.12.13, 64 bits |
-| Pruebas automáticas | 35/35 correctas |
+| Pruebas automáticas | 42/42 correctas |
 | GridWorld | Convergencia en 29 iteraciones |
 | Camino de GridWorld | 28 pasos, recompensa acumulada 73 |
 | MNIST entrenamiento | 60 000 imágenes |
@@ -50,6 +53,8 @@ mezclar su lógica con la de los demás.
 | Iris | 105 muestras de entrenamiento y 45 de prueba |
 | Mejor F1 macro en Iris | LDA: 97,78 % |
 | Comparación Iris | 9 combinaciones entre partición y clasificador |
+| California Housing | 20 640 muestras y 8 atributos |
+| Mejor R² de regresión | Árbol: 0,6893; CV: 0,7011 ± 0,0144 |
 | Dependencias | Sin conflictos según `pip check` |
 
 ## Inicio rápido
@@ -97,6 +102,12 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 .\.venv\Scripts\python.exe iris_split_comparison.py
 ```
 
+### Comparar modelos de regresión
+
+```powershell
+.\.venv\Scripts\python.exe california_housing_regression.py --no-gui
+```
+
 ## Estructura del proyecto
 
 ```text
@@ -106,10 +117,12 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 ├── q_learning_grid.py              # Q-Learning y comparación experimental
 ├── iris_classification.py          # Clasificación Iris 70/30
 ├── iris_split_comparison.py        # Comparación Iris 60/40, 70/30 y 80/20
+├── california_housing_regression.py # Comparación de cuatro regresores
 ├── MNIST_RL_README.md              # Referencia resumida de MNIST
 ├── Q_LEARNING_README.md            # Documentación completa de Q-Learning
 ├── IRIS_CLASSIFICATION_README.md    # Documentación completa de Iris
 ├── IRIS_SPLIT_COMPARISON_README.md  # Análisis de las tres particiones
+├── CALIFORNIA_HOUSING_README.md      # Regresión y validación cruzada
 ├── gridworld/
 │   ├── __init__.py
 │   ├── config.py                   # Parámetros y obstáculos
@@ -124,7 +137,12 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── visualization.py            # Fronteras y matrices de confusión
 │   ├── split_comparison.py          # Ejecución y CSV de las tres divisiones
 │   └── split_visualization.py       # Gráficas comparativas y 9 fronteras
+├── housing_regression/
+│   ├── __init__.py
+│   ├── experiment.py                # Modelos, CV, métricas y CSV
+│   └── visualization.py             # Métricas y líneas estimadas
 ├── data/mnist/                     # IDX y cachés NPY de MNIST
+├── data/california_housing/        # Caché descargable de scikit-learn
 ├── models/
 │   └── politica_mnist_rl.npz       # Política RL entrenada
 ├── tests/
@@ -133,7 +151,8 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── test_value_iteration.py
 │   ├── test_mnist_rl.py
 │   ├── test_iris_classifier.py
-│   └── test_iris_split_comparison.py
+│   ├── test_iris_split_comparison.py
+│   └── test_housing_regression.py
 ├── output/
 │   ├── resultado_final.png         # Resultado de GridWorld
 │   ├── mnist_consulta_7.png        # Ejemplo de consulta MNIST
@@ -146,7 +165,10 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── iris_particiones_metricas.png
 │   ├── iris_particiones_fronteras.png
 │   ├── iris_particiones_metricas.csv
-│   └── iris_particiones_predicciones.csv
+│   ├── iris_particiones_predicciones.csv
+│   ├── california_regresion_metricas.png
+│   ├── california_regresion_estimaciones.png
+│   └── california_regresion_*.csv
 ├── requirements.txt
 ├── run.bat                         # Inicio automático de GridWorld en Windows
 └── run.sh                          # Inicio automático de GridWorld en Unix
@@ -160,8 +182,8 @@ excluidos mediante `.gitignore`.
 ### Requisitos
 
 - Python 3.10 o superior.
-- Conexión a internet únicamente para la primera descarga de dependencias y de
-  MNIST.
+- Conexión a internet únicamente para la primera descarga de dependencias,
+  MNIST y California Housing.
 - Tkinter para la ventana de MNIST. Está incluido en la instalación usada en
   este equipo.
 
@@ -170,8 +192,8 @@ Dependencias directas:
 - `matplotlib`: visualización de GridWorld.
 - `numpy`: cálculos numéricos, entrenamiento y almacenamiento de MNIST.
 - `Pillow`: lectura, preparación y visualización de imágenes.
-- `scikit-learn`: conjunto Iris, división estratificada, clasificadores y
-  métricas de aprendizaje supervisado.
+- `scikit-learn`: conjuntos Iris y California Housing, particiones, modelos,
+  validación cruzada y métricas de aprendizaje supervisado.
 
 ### Windows
 
@@ -856,6 +878,55 @@ output/iris_particiones_predicciones.csv
 
 ![Fronteras de las tres particiones](outputs/iris_particiones_fronteras.png)
 
+# Aplicación 6: regresión con California Housing
+
+Este ejercicio independiente usa `california_housing_regression.py` y está
+documentado en detalle en `CALIFORNIA_HOUSING_README.md`. California Housing
+reemplaza al antiguo Boston Housing en las versiones modernas de
+`scikit-learn`.
+
+## Modelos y evaluación
+
+- Regresión lineal con atributos estandarizados.
+- Regresión polinomial de grado 2 con cuadrados e interacciones.
+- Regresión log-lineal, transformando `log(1 + y)` y regresando luego a la
+  escala monetaria original.
+- Árbol de decisión con profundidad máxima 10 y cinco muestras por hoja.
+
+Se reservan 16 512 observaciones para entrenamiento y 4 128 para prueba final.
+La validación cruzada K-Fold de cinco pliegues se aplica únicamente al conjunto
+de entrenamiento. Se reportan MAE, RMSE y R².
+
+## Ejecutar
+
+```powershell
+.\.venv\Scripts\python.exe california_housing_regression.py --no-gui
+```
+
+La primera ejecución descarga el dataset. Después puede utilizarse
+`--no-download` para exigir el uso del caché local.
+
+## Resultado verificado
+
+| Modelo | MAE prueba | RMSE prueba | R² prueba | R² CV media ± desv. |
+|---|---:|---:|---:|---:|
+| Lineal | 0,5332 | 0,7456 | 0,5758 | 0,6115 ± 0,0138 |
+| Polinomial grado 2 | 0,4670 | 0,6814 | 0,6457 | -1,8847 ± 5,6219 |
+| Log-lineal | 0,5362 | 0,9809 | 0,2657 | 0,5212 ± 0,0298 |
+| Árbol de decisión | 0,4311 | 0,6380 | 0,6893 | 0,7011 ± 0,0144 |
+
+El árbol fue el mejor y más estable. La regresión polinomial obtuvo un buen
+holdout, pero un pliegue de CV alcanzó R² `-11,94`; esta inestabilidad demuestra
+por qué una única división puede producir una conclusión engañosa.
+
+Las líneas de estimación varían el ingreso mediano y mantienen los otros siete
+atributos en sus medianas. Los paneles real frente a estimado incluyen una
+diagonal que representa la predicción perfecta.
+
+![Métricas de regresión](outputs/california_regresion_metricas.png)
+
+![Líneas de estimación](outputs/california_regresion_estimaciones.png)
+
 # Pruebas y validación
 
 Ejecute toda la batería:
@@ -864,7 +935,7 @@ Ejecute toda la batería:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Las 35 pruebas cubren:
+Las 42 pruebas cubren:
 
 - Dimensiones, posiciones y cinco obstáculos de GridWorld.
 - Movimientos fuera del tablero y bloqueo por obstáculos.
@@ -890,6 +961,11 @@ Las 35 pruebas cubren:
 - Comparación reproducible de nueve combinaciones de modelo y partición.
 - Exportación de nueve filas de métricas y 135 filas de predicciones.
 - Generación real de dos PNG y dos CSV del ejercicio comparativo.
+- Configuración de los cuatro regresores de California Housing.
+- Partición 80/20, validación cruzada y reproducibilidad.
+- Cálculo finito de MAE, RMSE y R² sobre datos sintéticos positivos.
+- Exportación de métricas, pliegues, predicciones y líneas de estimación.
+- Generación real de las dos figuras de regresión sin necesitar internet.
 
 Validar las dependencias instaladas:
 
@@ -926,7 +1002,10 @@ Después de instalar dependencias:
 # 8. Comparar las tres particiones de Iris
 .\.venv\Scripts\python.exe iris_split_comparison.py --no-gui
 
-# 9. Ejecutar todas las pruebas
+# 9. Comparar los modelos de California Housing
+.\.venv\Scripts\python.exe california_housing_regression.py --no-gui
+
+# 10. Ejecutar todas las pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
@@ -997,6 +1076,13 @@ composición del conjunto de prueba. Con solo 30 flores en 80/20, cada fallo
 altera el accuracy en 3,33 puntos. Use varias semillas o validación cruzada para
 comparar el comportamiento promedio y no depender de una sola división.
 
+## California Housing no puede descargarse
+
+La primera ejecución necesita internet. Revise la conexión y vuelva a ejecutar
+el comando. Cuando el caché exista en `data/california_housing/`, puede usar
+`--no-download`. Los tests de regresión usan datos sintéticos y funcionan sin
+descargar la base.
+
 # Cómo presentar el trabajo
 
 ## GridWorld
@@ -1044,6 +1130,15 @@ comparar el comportamiento promedio y no depender de una sola división.
 5. Relacione cada cambio de frontera con las muestras marcadas como prueba.
 6. Concluya proponiendo validación cruzada para una comparación más sólida.
 
+## Regresión California Housing
+
+1. Defina MAE, RMSE y R² y aclare sus criterios de mejora.
+2. Explique la separación entre prueba final y validación cruzada.
+3. Compare la forma de las cuatro líneas de estimación.
+4. Destaque que el árbol tuvo el mejor resultado y estabilidad.
+5. Analice por qué un pliegue polinomial produjo R² negativo extremo.
+6. Concluya que CV reveló un riesgo oculto por el holdout 80/20.
+
 # Limitaciones y mejoras futuras
 
 ## GridWorld
@@ -1084,6 +1179,13 @@ comparar el comportamiento promedio y no depender de una sola división.
 - Medir intervalos de confianza de accuracy y F1.
 - Separar un conjunto final que no participe en la elección de la partición.
 
+## Regresión California Housing
+
+- Regularizar el modelo polinomial con Ridge o Lasso.
+- Ajustar profundidad y tamaño mínimo de hoja mediante CV anidada.
+- Comparar Random Forest, Gradient Boosting y modelos robustos.
+- Analizar residuos, intervalos de confianza y sesgos geográficos.
+
 # Resumen de comandos frecuentes
 
 ```powershell
@@ -1110,6 +1212,9 @@ comparar el comportamiento promedio y no depender de una sola división.
 
 # Comparar particiones 60/40, 70/30 y 80/20
 .\.venv\Scripts\python.exe iris_split_comparison.py
+
+# Comparar regresores con validación cruzada
+.\.venv\Scripts\python.exe california_housing_regression.py --no-gui
 
 # Ejecutar pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v

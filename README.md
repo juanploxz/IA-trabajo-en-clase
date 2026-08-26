@@ -1,8 +1,8 @@
-# IA: ejercicios de aprendizaje por refuerzo y clasificación
+# IA: aprendizaje por refuerzo y modelos predictivos
 
-Repositorio académico en Python con cinco ejercicios independientes de
+Repositorio académico en Python con seis ejercicios independientes de
 inteligencia artificial. Incluye planificación mediante MDP, aprendizaje por
-refuerzo, reconocimiento de dígitos y clasificación supervisada.
+refuerzo, reconocimiento de dígitos, clasificación y regresión supervisada.
 
 Cada ejercicio tiene un ejecutable propio, documentación, pruebas automáticas
 y resultados reproducibles. La explicación conjunta y ampliada está en
@@ -17,6 +17,7 @@ y resultados reproducibles. La explicación conjunta y ampliada está en
 | 3 | GridWorld 15×15 | Q-Learning y comparación | `q_learning_grid.py` | [Guía](Q_LEARNING_README.md) |
 | 4 | Clasificación de Iris | LDA, K-NN(3) y árbol | `iris_classification.py` | [Guía](IRIS_CLASSIFICATION_README.md) |
 | 5 | Particiones de Iris | Comparación 60/40, 70/30 y 80/20 | `iris_split_comparison.py` | [Guía](IRIS_SPLIT_COMPARISON_README.md) |
+| 6 | California Housing | Regresión lineal, polinomial, log-lineal y árbol | `california_housing_regression.py` | [Guía](CALIFORNIA_HOUSING_README.md) |
 
 ## Resumen de cada ejercicio
 
@@ -52,6 +53,13 @@ matrices de confusión y fronteras de decisión bidimensionales.
 Repite los tres clasificadores con divisiones 60/40, 70/30 y 80/20. El ejercicio
 muestra el compromiso entre disponer de más datos para aprender y conservar un
 conjunto de prueba suficientemente grande para evaluar de forma estable.
+
+### 6. Regresión con California Housing
+
+Compara regresión lineal, polinomial de grado 2, log-lineal y árbol de decisión.
+Usa una prueba final 80/20 y validación cruzada de cinco pliegues sobre el
+entrenamiento. Exporta MAE, RMSE, R², resultados por pliegue, predicciones y
+líneas de estimación al variar el ingreso mediano.
 
 ## Instalación
 
@@ -100,6 +108,9 @@ Los comandos siguientes usan PowerShell. En Linux o macOS sustituya
 
 # Comparación Iris 60/40, 70/30 y 80/20
 .\.venv\Scripts\python.exe iris_split_comparison.py
+
+# Regresión California Housing con validación cruzada
+.\.venv\Scripts\python.exe california_housing_regression.py --no-gui
 ```
 
 Los comandos que aceptan `--no-gui` guardan resultados sin abrir ventanas.
@@ -109,12 +120,13 @@ Use `--help` en cada ejecutable para consultar sus opciones.
 
 | Experimento | Resultado verificado |
 |---|---:|
-| Pruebas automáticas | 35/35 correctas |
+| Pruebas automáticas | 42/42 correctas |
 | Value Iteration | 28 pasos; recompensa 73 |
 | MNIST REINFORCE | 92,58 % de exactitud |
 | Q-Learning | 28 pasos; recompensa 73 |
 | Mejor F1 de Iris 70/30 | LDA: 97,78 % |
 | Mejor F1 en la comparación de particiones | LDA 80/20: 100 % sobre 30 pruebas |
+| Mejor R² de California Housing | Árbol: 0,6893; CV: 0,7011 ± 0,0144 |
 
 El 100 % de LDA con 80/20 corresponde a una única partición pequeña y no
 demuestra superioridad general. La documentación explica esta limitación y
@@ -138,6 +150,12 @@ propone validación cruzada para comparaciones futuras.
 
 ![Comparación 60/40, 70/30 y 80/20](outputs/iris_particiones_metricas.png)
 
+### Regresión con California Housing
+
+![Métricas de regresión](outputs/california_regresion_metricas.png)
+
+![Líneas y calidad de estimación](outputs/california_regresion_estimaciones.png)
+
 Los PNG y CSV de referencia están en `outputs/`. Las nuevas ejecuciones escriben
 en `output/`, carpeta ignorada por Git salvo su archivo `.gitkeep`.
 
@@ -150,18 +168,22 @@ en `output/`, carpeta ignorada por Git salvo su archivo `.gitkeep`.
 ├── q_learning_grid.py
 ├── iris_classification.py
 ├── iris_split_comparison.py
+├── california_housing_regression.py
 ├── gridworld/                 # Entorno y algoritmos tabulares
 ├── iris_classifier/           # Modelos, métricas y visualizaciones de Iris
-├── tests/                     # 35 pruebas automáticas
+├── housing_regression/        # Regresores, CV, métricas y visualizaciones
+├── tests/                     # 42 pruebas automáticas
 ├── examples/                  # Imagen de ejemplo para MNIST
 ├── outputs/                   # Resultados de referencia visibles en GitHub
 ├── data/mnist/.gitkeep        # Datos descargados localmente
+├── data/california_housing/.gitkeep
 ├── models/.gitkeep            # Modelos entrenados localmente
 └── requirements.txt
 ```
 
-Los datos de MNIST, modelos entrenados, entorno virtual, cachés y resultados
-temporales no se versionan. Se recrean mediante los comandos documentados.
+Los datasets descargados, modelos entrenados, entorno virtual, cachés y
+resultados temporales no se versionan. Se recrean mediante los comandos
+documentados.
 
 ## Pruebas
 
@@ -172,4 +194,5 @@ temporales no se versionan. Se recrean mediante los comandos documentados.
 
 La batería cubre transiciones y Bellman, entrenamiento y persistencia de
 REINFORCE, actualización TD de Q-Learning, particiones estratificadas,
-clasificadores, métricas, reproducibilidad y generación de PNG/CSV.
+clasificadores, regresores, validación cruzada, métricas, reproducibilidad y
+generación de PNG/CSV.
