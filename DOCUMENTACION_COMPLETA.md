@@ -1,6 +1,6 @@
 # Proyectos académicos de inteligencia artificial en Python
 
-Este repositorio contiene seis aplicaciones independientes de inteligencia
+Este repositorio contiene siete aplicaciones independientes de inteligencia
 artificial, aprendizaje por refuerzo (Reinforcement Learning, **RL**) y
 aprendizaje supervisado:
 
@@ -17,6 +17,8 @@ aprendizaje supervisado:
    divisiones 60/40, 70/30 y 80/20 para estudiar el efecto del tamaño muestral.
 6. **Regresión con California Housing:** compara modelos lineal, polinomial,
    log-lineal y árbol mediante holdout y validación cruzada.
+7. **Subajuste y sobreajuste:** compara K-NN y árboles sobre Wine y Breast
+   Cancer mediante particiones 50/50 y 40/60, CV y curvas de complejidad.
 
 Cada ejercicio tiene su propio archivo ejecutable, paquete, documentación,
 pruebas y resultados. De esta manera se puede estudiar o ejecutar uno sin
@@ -33,6 +35,7 @@ mezclar su lógica con la de los demás.
 - [Aplicación 4: clasificación de Iris](#aplicación-4-clasificación-de-iris)
 - [Aplicación 5: comparación de particiones](#aplicación-5-comparación-de-particiones-iris)
 - [Aplicación 6: regresión](#aplicación-6-regresión-con-california-housing)
+- [Aplicación 7: subajuste y sobreajuste](#aplicación-7-subajuste-y-sobreajuste)
 - [Pruebas y validación](#pruebas-y-validación)
 - [Solución de problemas](#solución-de-problemas)
 - [Cómo presentar el trabajo](#cómo-presentar-el-trabajo)
@@ -42,7 +45,7 @@ mezclar su lógica con la de los demás.
 | Componente | Resultado comprobado |
 |---|---:|
 | Python | 3.12.13, 64 bits |
-| Pruebas automáticas | 42/42 correctas |
+| Pruebas automáticas | 50/50 correctas |
 | GridWorld | Convergencia en 29 iteraciones |
 | Camino de GridWorld | 28 pasos, recompensa acumulada 73 |
 | MNIST entrenamiento | 60 000 imágenes |
@@ -55,6 +58,9 @@ mezclar su lógica con la de los demás.
 | Comparación Iris | 9 combinaciones entre partición y clasificador |
 | California Housing | 20 640 muestras y 8 atributos |
 | Mejor R² de regresión | Árbol: 0,6893; CV: 0,7011 ± 0,0144 |
+| Comparación de ajuste | 24 combinaciones de dataset, partición y modelo |
+| Mejor Breast Cancer 50/50 | K-NN(7): 96,14 % de prueba y 96,12 % de CV |
+| Subajuste Wine 40/60 | K-NN(51): 40,95 % de CV |
 | Dependencias | Sin conflictos según `pip check` |
 
 ## Inicio rápido
@@ -108,6 +114,12 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 .\.venv\Scripts\python.exe california_housing_regression.py --no-gui
 ```
 
+### Comparar subajuste y sobreajuste
+
+```powershell
+.\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
+```
+
 ## Estructura del proyecto
 
 ```text
@@ -118,11 +130,13 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 ├── iris_classification.py          # Clasificación Iris 70/30
 ├── iris_split_comparison.py        # Comparación Iris 60/40, 70/30 y 80/20
 ├── california_housing_regression.py # Comparación de cuatro regresores
+├── classification_fit_comparison.py # Subajuste/sobreajuste en dos datasets
 ├── MNIST_RL_README.md              # Referencia resumida de MNIST
 ├── Q_LEARNING_README.md            # Documentación completa de Q-Learning
 ├── IRIS_CLASSIFICATION_README.md    # Documentación completa de Iris
 ├── IRIS_SPLIT_COMPARISON_README.md  # Análisis de las tres particiones
 ├── CALIFORNIA_HOUSING_README.md      # Regresión y validación cruzada
+├── CLASSIFICATION_FIT_README.md       # Ajuste y curvas de complejidad
 ├── gridworld/
 │   ├── __init__.py
 │   ├── config.py                   # Parámetros y obstáculos
@@ -141,6 +155,10 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── __init__.py
 │   ├── experiment.py                # Modelos, CV, métricas y CSV
 │   └── visualization.py             # Métricas y líneas estimadas
+├── classification_fit/
+│   ├── __init__.py
+│   ├── experiment.py                # Datasets, holdout, CV y diagnóstico
+│   └── visualization.py             # Brechas y curvas de complejidad
 ├── data/mnist/                     # IDX y cachés NPY de MNIST
 ├── data/california_housing/        # Caché descargable de scikit-learn
 ├── models/
@@ -152,7 +170,8 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── test_mnist_rl.py
 │   ├── test_iris_classifier.py
 │   ├── test_iris_split_comparison.py
-│   └── test_housing_regression.py
+│   ├── test_housing_regression.py
+│   └── test_classification_fit.py
 ├── output/
 │   ├── resultado_final.png         # Resultado de GridWorld
 │   ├── mnist_consulta_7.png        # Ejemplo de consulta MNIST
@@ -168,14 +187,19 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── iris_particiones_predicciones.csv
 │   ├── california_regresion_metricas.png
 │   ├── california_regresion_estimaciones.png
-│   └── california_regresion_*.csv
+│   ├── california_regresion_*.csv
+│   ├── clasificadores_ajuste_metricas.png
+│   ├── clasificadores_ajuste_knn.png
+│   ├── clasificadores_ajuste_arbol.png
+│   └── clasificadores_ajuste_*.csv
 ├── requirements.txt
 ├── run.bat                         # Inicio automático de GridWorld en Windows
 └── run.sh                          # Inicio automático de GridWorld en Unix
 ```
 
-Los archivos grandes de datos, modelos, cachés y resultados generados están
-excluidos mediante `.gitignore`.
+Los datos, modelos, cachés y resultados temporales de `output/` están excluidos
+mediante `.gitignore`. Las figuras y tablas de referencia visibles en GitHub se
+conservan por separado en `outputs/`.
 
 ## Instalación desde cero
 
@@ -927,6 +951,60 @@ diagonal que representa la predicción perfecta.
 
 ![Líneas de estimación](outputs/california_regresion_estimaciones.png)
 
+# Aplicación 7: subajuste y sobreajuste
+
+Este ejercicio usa `classification_fit_comparison.py` y está documentado con
+tablas completas en `CLASSIFICATION_FIT_README.md`. Trabaja con Wine (178
+muestras, 13 atributos, 3 clases) y Breast Cancer Wisconsin (569 muestras, 30
+atributos, 2 clases), ambos incluidos en scikit-learn y disponibles sin
+descargas.
+
+## Particiones, CV y modelos
+
+Se comparan divisiones estratificadas 50/50 y 40/60. Estas divisiones son
+holdout; no son validación cruzada. Una vez separada la prueba, se ejecuta CV
+estratificada de cinco pliegues solo sobre el entrenamiento.
+
+Las configuraciones principales son K-NN con `k=1`, `k=7` y `k=51`, junto con
+árboles de profundidad 1, profundidad 5 y sin límite. K-NN incluye
+estandarización dentro de un pipeline para que cada fold ajuste su propio
+escalador sin fuga de información.
+
+En K-NN, aumentar `k` suaviza la frontera y **reduce** la complejidad; por eso
+`k=51` puede subajustar. En un árbol ocurre la relación habitual: una mayor
+profundidad aumenta la flexibilidad y puede llevar a memorización.
+
+## Ejecutar
+
+```powershell
+.\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
+```
+
+## Resultados principales
+
+| Dataset/partición | Configuración | Train | Test | CV | Lectura |
+|---|---|---:|---:|---:|---|
+| Wine 40/60 | K-NN(51) | 71,83 % | 66,36 % | 40,95 % | Subajuste claro |
+| Wine 40/60 | Árbol sin límite | 100,00 % | 88,79 % | 84,67 % | Sobreajuste |
+| Cancer 50/50 | K-NN(7) | 97,18 % | 96,14 % | 96,12 % | Buen compromiso |
+| Cancer 50/50 | Árbol sin límite | 100,00 % | 91,23 % | 92,96 % | Sobreajuste |
+| Cancer 40/60 | Árbol profundidad 1 | 94,27 % | 90,06 % | 90,67 % | Subajuste relativo |
+
+El programa reporta accuracy de entrenamiento y prueba, balanced accuracy,
+precisión, recall, F1 macro, resultados individuales de CV y las brechas de
+generalización. El diagnóstico textual usa umbrales descriptivos y debe
+interpretarse como evidencia comparativa, no como una prueba estadística.
+
+Las curvas recorren diez valores de `k` y seis profundidades. Así se observa
+directamente cuándo el entrenamiento sigue mejorando mientras validación o
+prueba se estancan o empeoran.
+
+![Brechas de ajuste](outputs/clasificadores_ajuste_metricas.png)
+
+![Curva de K-NN](outputs/clasificadores_ajuste_knn.png)
+
+![Curva del árbol](outputs/clasificadores_ajuste_arbol.png)
+
 # Pruebas y validación
 
 Ejecute toda la batería:
@@ -935,7 +1013,7 @@ Ejecute toda la batería:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Las 42 pruebas cubren:
+Las 50 pruebas cubren:
 
 - Dimensiones, posiciones y cinco obstáculos de GridWorld.
 - Movimientos fuera del tablero y bloqueo por obstáculos.
@@ -966,6 +1044,15 @@ Las 42 pruebas cubren:
 - Cálculo finito de MAE, RMSE y R² sobre datos sintéticos positivos.
 - Exportación de métricas, pliegues, predicciones y líneas de estimación.
 - Generación real de las dos figuras de regresión sin necesitar internet.
+- Carga local de Wine y Breast Cancer y dimensiones esperadas.
+- Configuraciones simples, intermedias y flexibles de K-NN y árbol.
+- Particiones 50/50 y 40/60 estratificadas.
+- Accuracy de train, prueba y cinco pliegues de validación cruzada.
+- Detección reproducible de señales de subajuste y sobreajuste.
+- Curvas que incluyen `k=7`, `k=51` y árbol sin límite.
+- Exportación de 24 métricas, 120 folds, 64 puntos de complejidad y 823
+  predicciones.
+- Generación real de las tres figuras del nuevo ejercicio.
 
 Validar las dependencias instaladas:
 
@@ -1005,7 +1092,10 @@ Después de instalar dependencias:
 # 9. Comparar los modelos de California Housing
 .\.venv\Scripts\python.exe california_housing_regression.py --no-gui
 
-# 10. Ejecutar todas las pruebas
+# 10. Analizar subajuste y sobreajuste
+.\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
+
+# 11. Ejecutar todas las pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
@@ -1083,6 +1173,13 @@ el comando. Cuando el caché exista en `data/california_housing/`, puede usar
 `--no-download`. Los tests de regresión usan datos sintéticos y funcionan sin
 descargar la base.
 
+## K-NN indica que `k=51` es demasiado grande
+
+El valor de `k` no puede superar la cantidad de ejemplos disponibles dentro
+del entrenamiento de un fold. Con las particiones predeterminadas `k=51` es
+válido. Si reduce `--train-sizes` o cambia mucho `--cv-folds`, use también un
+`--high-k` menor. El programa informa cuántas muestras internas hay disponibles.
+
 # Cómo presentar el trabajo
 
 ## GridWorld
@@ -1139,6 +1236,17 @@ descargar la base.
 5. Analice por qué un pliegue polinomial produjo R² negativo extremo.
 6. Concluya que CV reveló un riesgo oculto por el holdout 80/20.
 
+## Subajuste y sobreajuste
+
+1. Diferencie una partición holdout de la validación cruzada.
+2. Explique que train alto y CV/test menor es una señal de sobreajuste.
+3. Muestre el subajuste de K-NN(51) y del árbol de profundidad 1 en Wine.
+4. Aclare que aumentar `k` reduce, no aumenta, la flexibilidad de K-NN.
+5. Compare el buen compromiso de K-NN(7) en Breast Cancer con los árboles que
+   memorizan el entrenamiento.
+6. Use las curvas para justificar que un hiperparámetro no debe escogerse solo
+   por su accuracy de entrenamiento.
+
 # Limitaciones y mejoras futuras
 
 ## GridWorld
@@ -1186,6 +1294,14 @@ descargar la base.
 - Comparar Random Forest, Gradient Boosting y modelos robustos.
 - Analizar residuos, intervalos de confianza y sesgos geográficos.
 
+## Subajuste y sobreajuste
+
+- Repetir las particiones con varias semillas e intervalos de confianza.
+- Aplicar validación cruzada anidada para seleccionar `k` y profundidad.
+- Reservar una tercera partición final después de elegir hiperparámetros.
+- Comparar SVM, regresión logística, Random Forest y boosting.
+- Añadir curvas de aprendizaje variando el número de muestras.
+
 # Resumen de comandos frecuentes
 
 ```powershell
@@ -1215,6 +1331,9 @@ descargar la base.
 
 # Comparar regresores con validación cruzada
 .\.venv\Scripts\python.exe california_housing_regression.py --no-gui
+
+# Comparar subajuste y sobreajuste
+.\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
 
 # Ejecutar pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v

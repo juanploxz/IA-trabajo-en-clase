@@ -1,0 +1,824 @@
+﻿dataset,particion_entrenamiento_prueba,indice_original,clase_real,K-NN (k=1),K-NN (k=7),K-NN (k=51),Árbol (profundidad 1),Árbol (profundidad 5),Árbol (sin límite)
+Wine,50/50,133,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,170,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,177,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,29,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,58,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,43,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,50/50,121,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,50/50,66,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,50/50,46,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,107,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,68,Cultivar 2,Cultivar 2,Cultivar 3,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,83,Cultivar 2,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,160,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,166,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,21,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,105,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,155,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,173,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,42,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,32,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,134,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,62,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,128,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,176,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,87,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,118,Cultivar 2,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,108,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,156,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,102,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,51,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,89,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,11,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,129,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,28,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,76,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,50/50,124,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,60,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,113,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,127,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,14,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,100,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,72,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,146,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,38,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,92,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,18,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,132,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,64,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,98,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,50/50,35,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,144,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,52,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,40,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,165,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,138,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,22,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,2,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,130,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,41,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,148,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,136,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,73,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,93,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,164,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,74,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,142,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,50/50,152,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,23,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,7,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,81,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,79,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,169,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,82,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,112,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,20,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,10,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,56,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,143,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,48,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,37,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,115,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,122,Cultivar 2,Cultivar 3,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,149,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,50/50,1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,84,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,24,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,33,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,50/50,94,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,50/50,39,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,64,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,112,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,146,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,11,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,138,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,176,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,107,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,87,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,29,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,166,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,115,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,144,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,94,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,149,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,40,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,76,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,143,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,175,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,22,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,24,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,159,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,155,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,113,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,152,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,156,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,81,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,92,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,140,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,118,Cultivar 2,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,20,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,169,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,16,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,121,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,40/60,58,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,79,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,83,Cultivar 2,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,72,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,51,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,164,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,18,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,127,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,114,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,62,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,7,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,82,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,35,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,170,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,89,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,68,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,129,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,134,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,56,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,102,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,167,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,39,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,37,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,173,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,26,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,93,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,98,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,59,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,84,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,148,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,38,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,105,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,100,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,21,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,10,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,67,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,110,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,108,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,66,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,40/60,130,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,73,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,48,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,46,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,27,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,133,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,2,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,41,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,14,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,97,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,60,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,52,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,74,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,132,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,9,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,128,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,160,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,43,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,33,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,126,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,40/60,165,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,42,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,23,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,122,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,136,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,124,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,142,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2
+Wine,40/60,32,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,15,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,162,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 2,Cultivar 1,Cultivar 3,Cultivar 3
+Wine,40/60,65,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,95,Cultivar 2,Cultivar 2,Cultivar 1,Cultivar 2,Cultivar 2,Cultivar 2,Cultivar 2
+Wine,40/60,28,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1,Cultivar 1
+Wine,40/60,177,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 3,Cultivar 1,Cultivar 3,Cultivar 3
+Breast Cancer Wisconsin,50/50,80,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,328,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,251,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,17,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,555,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,511,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,535,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,496,Benigno,Maligno,Maligno,Benigno,Benigno,Maligno,Benigno
+Breast Cancer Wisconsin,50/50,325,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,296,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,199,Maligno,Maligno,Maligno,Maligno,Maligno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,266,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,203,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,291,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,335,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,65,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,180,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,467,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,176,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,73,Maligno,Benigno,Maligno,Benigno,Benigno,Maligno,Benigno
+Breast Cancer Wisconsin,50/50,248,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,286,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,14,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,567,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,86,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,383,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,294,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,23,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,340,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,353,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,66,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,506,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,51,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,152,Benigno,Benigno,Benigno,Maligno,Maligno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,288,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,407,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,38,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,492,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,445,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,75,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,461,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,269,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,67,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,30,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,218,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,61,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,212,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,482,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,242,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,70,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,96,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,156,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,54,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,509,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,345,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,137,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,98,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,278,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,470,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,498,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,490,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,428,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,537,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,74,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,149,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,385,Maligno,Maligno,Maligno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,548,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,556,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,13,Maligno,Maligno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,127,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,466,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,116,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,244,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,464,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,352,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,543,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,148,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,147,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,504,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,413,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,344,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,307,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,320,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,477,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,1,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,529,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,237,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,536,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,333,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,359,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,324,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,431,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,542,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,140,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,99,Maligno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,488,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,177,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,43,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,381,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,423,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Benigno
+Breast Cancer Wisconsin,50/50,427,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,234,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,0,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,198,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,519,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,321,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,403,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,101,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,523,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,301,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,158,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,387,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,93,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,343,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,110,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,337,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,552,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,361,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,81,Benigno,Maligno,Maligno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,433,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,329,Maligno,Benigno,Benigno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,408,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,194,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,483,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,258,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,369,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,79,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,349,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,422,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,182,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,64,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,463,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,144,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,415,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,440,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,77,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,7,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,104,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,452,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,232,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,330,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,295,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,564,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,518,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,122,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,261,Maligno,Maligno,Maligno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,41,Maligno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,355,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,20,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,524,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,102,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,411,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,297,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,521,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,484,Benigno,Benigno,Benigno,Benigno,Maligno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,528,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,168,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,468,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,59,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,541,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,53,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,300,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,298,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,120,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,257,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,6,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,138,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,500,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,513,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,365,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,489,Maligno,Benigno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,284,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,354,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,200,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,326,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,69,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,549,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,472,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,310,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,507,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,136,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,48,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,123,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,348,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,447,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,235,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,342,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,322,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,83,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,412,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,103,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,417,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,399,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,398,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,366,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,202,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,141,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,50,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,474,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,171,Maligno,Maligno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,450,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,167,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,434,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,372,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,113,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,85,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,223,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,533,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,350,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,205,Maligno,Maligno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,495,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,119,Maligno,Maligno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,561,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,397,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,432,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,404,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,37,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,406,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,444,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,192,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,247,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,460,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,358,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,246,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,4,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,121,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,395,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,260,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,256,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,363,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,497,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,526,Benigno,Benigno,Benigno,Benigno,Maligno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,375,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno
+Breast Cancer Wisconsin,50/50,62,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,527,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,292,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,231,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno
+Breast Cancer Wisconsin,50/50,439,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,532,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,386,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,128,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,501,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,522,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,95,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,228,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,534,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,10,Maligno,Maligno,Maligno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,318,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,265,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,370,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,188,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,316,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,516,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,308,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,414,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,334,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,3,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,84,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,568,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,426,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,390,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,250,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,217,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,553,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,540,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,530,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,499,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,35,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,508,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,204,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,268,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,150,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,24,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,26,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,94,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,275,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,8,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,287,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,305,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,494,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,206,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,347,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,229,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,50/50,267,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,50/50,44,Maligno,Maligno,Maligno,Benigno,Maligno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,552,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,412,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,321,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,307,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,452,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,413,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,85,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,333,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,344,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,209,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,343,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,359,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,289,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,403,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,515,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,534,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,76,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,365,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,137,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,272,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,203,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,14,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,212,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,205,Maligno,Maligno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,180,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,536,Maligno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,325,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,168,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,466,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,50,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,216,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,228,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,352,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,358,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,531,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,46,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,501,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,324,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,224,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,381,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,432,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,477,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,506,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,98,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,342,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,17,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,525,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,213,Maligno,Maligno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,51,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,267,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,167,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,192,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,53,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,417,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,113,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,291,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,258,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,308,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,141,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,499,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,54,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,48,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,404,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,450,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,377,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,532,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,116,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,61,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,362,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,246,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,136,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,447,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,124,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,366,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,461,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,444,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,128,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,4,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,150,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,229,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,24,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,511,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,537,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,194,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,426,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,298,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,540,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,110,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,286,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,428,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,1,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,102,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,43,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,355,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,470,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,278,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,84,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,535,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,464,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,288,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,30,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,64,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,130,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,528,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,329,Maligno,Benigno,Benigno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,242,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,256,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,326,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,387,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,275,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,36,Maligno,Maligno,Maligno,Maligno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,223,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,334,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,74,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,95,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,96,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,546,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,322,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,497,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,513,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,550,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,294,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,460,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,386,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,330,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,152,Benigno,Benigno,Benigno,Maligno,Maligno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,204,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,474,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,41,Maligno,Benigno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,280,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,177,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,200,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,185,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,3,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,144,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,411,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,463,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,94,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,171,Maligno,Maligno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,268,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,23,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,127,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,217,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,415,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,38,Maligno,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,26,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,320,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,500,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,147,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,221,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,172,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,214,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,541,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,423,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,260,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,370,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,122,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,361,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,123,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,391,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,68,Benigno,Benigno,Maligno,Maligno,Maligno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,340,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,292,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,162,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,556,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,559,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,354,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,8,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,83,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,346,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,305,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,335,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,414,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,508,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,456,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,77,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,542,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,140,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,505,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,422,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,562,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,11,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,398,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,120,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,549,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,490,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,266,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,99,Maligno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,248,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,59,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,494,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,341,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,81,Benigno,Maligno,Maligno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,234,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,518,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,427,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,529,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,484,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,237,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,238,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,86,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,79,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,206,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,509,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,316,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,251,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,250,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,489,Maligno,Benigno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,521,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,401,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,551,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,62,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,191,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,483,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,232,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,75,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,69,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,498,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,564,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,2,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,328,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,7,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,472,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,379,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,424,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,148,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,218,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,20,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,67,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,555,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,37,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,300,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,527,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,507,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,395,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,492,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,406,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,296,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,57,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,353,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,350,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,119,Maligno,Maligno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,372,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,348,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,375,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,530,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,519,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,66,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,295,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,235,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,553,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,80,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,439,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,378,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,73,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,104,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,65,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,138,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,103,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,301,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,236,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,418,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,533,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,433,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,261,Maligno,Maligno,Maligno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,149,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,0,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,318,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,231,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,567,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,101,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,25,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,407,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,495,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,431,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,397,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,526,Benigno,Maligno,Maligno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,259,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,255,Maligno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,524,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,158,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,225,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,176,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,488,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,35,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,91,Maligno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,496,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,445,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,198,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,561,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,543,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,349,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,199,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,467,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,548,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,269,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,297,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,247,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,244,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,516,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,182,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,345,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,482,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,468,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,44,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,363,Benigno,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,399,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,156,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,284,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,93,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,13,Maligno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,10,Maligno,Maligno,Maligno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,265,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,40,Maligno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,383,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,143,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,277,Maligno,Maligno,Maligno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,6,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,504,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,347,Benigno,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,70,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,132,Maligno,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,310,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,337,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,121,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,202,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,125,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,408,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,442,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,568,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,522,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,523,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,287,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,215,Maligno,Maligno,Maligno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,385,Maligno,Maligno,Maligno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,434,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,188,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,114,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,390,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno,Benigno
+Breast Cancer Wisconsin,40/60,257,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,440,Benigno,Benigno,Benigno,Benigno,Maligno,Maligno,Maligno
+Breast Cancer Wisconsin,40/60,369,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno,Maligno

@@ -1,8 +1,9 @@
 # IA: aprendizaje por refuerzo y modelos predictivos
 
-Repositorio académico en Python con seis ejercicios independientes de
+Repositorio académico en Python con siete ejercicios independientes de
 inteligencia artificial. Incluye planificación mediante MDP, aprendizaje por
-refuerzo, reconocimiento de dígitos, clasificación y regresión supervisada.
+refuerzo, reconocimiento de dígitos, clasificación, análisis de ajuste y
+regresión supervisada.
 
 Cada ejercicio tiene un ejecutable propio, documentación, pruebas automáticas
 y resultados reproducibles. La explicación conjunta y ampliada está en
@@ -18,6 +19,7 @@ y resultados reproducibles. La explicación conjunta y ampliada está en
 | 4 | Clasificación de Iris | LDA, K-NN(3) y árbol | `iris_classification.py` | [Guía](IRIS_CLASSIFICATION_README.md) |
 | 5 | Particiones de Iris | Comparación 60/40, 70/30 y 80/20 | `iris_split_comparison.py` | [Guía](IRIS_SPLIT_COMPARISON_README.md) |
 | 6 | California Housing | Regresión lineal, polinomial, log-lineal y árbol | `california_housing_regression.py` | [Guía](CALIFORNIA_HOUSING_README.md) |
+| 7 | Subajuste y sobreajuste | K-NN y árboles con Wine/Breast Cancer | `classification_fit_comparison.py` | [Guía](CLASSIFICATION_FIT_README.md) |
 
 ## Resumen de cada ejercicio
 
@@ -60,6 +62,14 @@ Compara regresión lineal, polinomial de grado 2, log-lineal y árbol de decisi�
 Usa una prueba final 80/20 y validación cruzada de cinco pliegues sobre el
 entrenamiento. Exporta MAE, RMSE, R², resultados por pliegue, predicciones y
 líneas de estimación al variar el ingreso mediano.
+
+### 7. Subajuste y sobreajuste
+
+Compara K-NN y árboles deliberadamente simples, intermedios y flexibles sobre
+Wine y Breast Cancer. Usa particiones estratificadas 50/50 y 40/60, más
+validación cruzada de cinco pliegues dentro del entrenamiento. Contrasta
+accuracy de train, prueba y CV, brechas de generalización y curvas para `k` y
+profundidad.
 
 ## Instalación
 
@@ -111,6 +121,9 @@ Los comandos siguientes usan PowerShell. En Linux o macOS sustituya
 
 # Regresión California Housing con validación cruzada
 .\.venv\Scripts\python.exe california_housing_regression.py --no-gui
+
+# Subajuste y sobreajuste con Wine y Breast Cancer
+.\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
 ```
 
 Los comandos que aceptan `--no-gui` guardan resultados sin abrir ventanas.
@@ -120,13 +133,15 @@ Use `--help` en cada ejecutable para consultar sus opciones.
 
 | Experimento | Resultado verificado |
 |---|---:|
-| Pruebas automáticas | 42/42 correctas |
+| Pruebas automáticas | 50/50 correctas |
 | Value Iteration | 28 pasos; recompensa 73 |
 | MNIST REINFORCE | 92,58 % de exactitud |
 | Q-Learning | 28 pasos; recompensa 73 |
 | Mejor F1 de Iris 70/30 | LDA: 97,78 % |
 | Mejor F1 en la comparación de particiones | LDA 80/20: 100 % sobre 30 pruebas |
 | Mejor R² de California Housing | Árbol: 0,6893; CV: 0,7011 ± 0,0144 |
+| Mejor ajuste en Breast Cancer | K-NN(7): prueba 96,14 % en 50/50 |
+| Subajuste más claro en Wine 40/60 | K-NN(51): CV 40,95 % |
 
 El 100 % de LDA con 80/20 corresponde a una única partición pequeña y no
 demuestra superioridad general. La documentación explica esta limitación y
@@ -156,6 +171,14 @@ propone validación cruzada para comparaciones futuras.
 
 ![Líneas y calidad de estimación](outputs/california_regresion_estimaciones.png)
 
+### Subajuste y sobreajuste
+
+![Brechas de generalización](outputs/clasificadores_ajuste_metricas.png)
+
+![Curva de complejidad de K-NN](outputs/clasificadores_ajuste_knn.png)
+
+![Curva de complejidad del árbol](outputs/clasificadores_ajuste_arbol.png)
+
 Los PNG y CSV de referencia están en `outputs/`. Las nuevas ejecuciones escriben
 en `output/`, carpeta ignorada por Git salvo su archivo `.gitkeep`.
 
@@ -169,10 +192,12 @@ en `output/`, carpeta ignorada por Git salvo su archivo `.gitkeep`.
 ├── iris_classification.py
 ├── iris_split_comparison.py
 ├── california_housing_regression.py
+├── classification_fit_comparison.py
 ├── gridworld/                 # Entorno y algoritmos tabulares
 ├── iris_classifier/           # Modelos, métricas y visualizaciones de Iris
 ├── housing_regression/        # Regresores, CV, métricas y visualizaciones
-├── tests/                     # 42 pruebas automáticas
+├── classification_fit/        # Análisis de subajuste y sobreajuste
+├── tests/                     # 50 pruebas automáticas
 ├── examples/                  # Imagen de ejemplo para MNIST
 ├── outputs/                   # Resultados de referencia visibles en GitHub
 ├── data/mnist/.gitkeep        # Datos descargados localmente
@@ -195,4 +220,5 @@ documentados.
 La batería cubre transiciones y Bellman, entrenamiento y persistencia de
 REINFORCE, actualización TD de Q-Learning, particiones estratificadas,
 clasificadores, regresores, validación cruzada, métricas, reproducibilidad y
-generación de PNG/CSV.
+generación de PNG/CSV. También comprueba las curvas de complejidad, la
+estratificación y las señales de subajuste/sobreajuste en ambos datasets.
