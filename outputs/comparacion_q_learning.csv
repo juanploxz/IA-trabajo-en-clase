@@ -1,0 +1,10 @@
+﻿metrica,value_iteration,q_learning
+enfoque,Planificación con modelo,Aprendizaje sin modelo
+actualizaciones,29,5000
+interacciones_reales,0,186264
+tiempo_segundos,0.09214049996808171,9.735007899987977
+pasos_camino,28,28
+recompensa_camino,73.0,73.0
+tasa_exito_final,1.0,1.0
+estados_no_terminales_actualizados,219 por modelo,219
+episodio_estable_95,No aplica,139
