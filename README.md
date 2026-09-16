@@ -1,12 +1,13 @@
 # IA: aprendizaje por refuerzo y modelos predictivos
 
-Repositorio académico en Python con siete ejercicios independientes de
+Repositorio académico en Python con ocho ejercicios independientes de
 inteligencia artificial. Incluye planificación mediante MDP, aprendizaje por
 refuerzo, reconocimiento de dígitos, clasificación, análisis de ajuste y
-regresión supervisada.
+regresión supervisada y generación de datos con ruido.
 
-Cada ejercicio tiene un ejecutable propio, documentación, pruebas automáticas
-y resultados reproducibles. La explicación conjunta y ampliada está en
+Cada ejercicio tiene un ejecutable propio, documentación y resultados
+reproducibles. El repositorio también incluye pruebas automáticas para los
+algoritmos de los ejercicios anteriores. La explicación conjunta y ampliada está en
 [DOCUMENTACION_COMPLETA.md](DOCUMENTACION_COMPLETA.md).
 
 ## Ejercicios
@@ -20,6 +21,7 @@ y resultados reproducibles. La explicación conjunta y ampliada está en
 | 5 | Particiones de Iris | Comparación 60/40, 70/30 y 80/20 | `iris_split_comparison.py` | [Guía](IRIS_SPLIT_COMPARISON_README.md) |
 | 6 | California Housing | Regresión lineal, polinomial, log-lineal y árbol | `california_housing_regression.py` | [Guía](CALIFORNIA_HOUSING_README.md) |
 | 7 | Subajuste y sobreajuste | K-NN y árboles con Wine/Breast Cancer | `classification_fit_comparison.py` | [Guía](CLASSIFICATION_FIT_README.md) |
+| 8 | Puntos sobre una recta con ruido | 100 muestras aleatorias y dispersión | `recta_con_ruido.py` | [Guía](RECTA_RUIDO_README.md) |
 
 ## Resumen de cada ejercicio
 
@@ -70,6 +72,12 @@ Wine y Breast Cancer. Usa particiones estratificadas 50/50 y 40/60, más
 validación cruzada de cinco pliegues dentro del entrenamiento. Contrasta
 accuracy de train, prueba y CV, brechas de generalización y curvas para `k` y
 profundidad.
+
+### 8. Recta con ruido
+
+Genera 100 coordenadas con `x` aleatorio entre 0 y 10 y `y = m*x + b + ruido`.
+La configuración inicial usa `m=2`, `b=1` y ruido normal de desviación 2.
+Muestra los puntos junto a la recta ideal y guarda la figura y las coordenadas.
 
 ## Instalación
 
@@ -124,6 +132,9 @@ Los comandos siguientes usan PowerShell. En Linux o macOS sustituya
 
 # Subajuste y sobreajuste con Wine y Breast Cancer
 .\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
+
+# Generar y dibujar 100 puntos sobre una recta con ruido
+.\.venv\Scripts\python.exe recta_con_ruido.py
 ```
 
 Los comandos que aceptan `--no-gui` guardan resultados sin abrir ventanas.
@@ -193,6 +204,7 @@ en `output/`, carpeta ignorada por Git salvo su archivo `.gitkeep`.
 ├── iris_split_comparison.py
 ├── california_housing_regression.py
 ├── classification_fit_comparison.py
+├── recta_con_ruido.py
 ├── gridworld/                 # Entorno y algoritmos tabulares
 ├── iris_classifier/           # Modelos, métricas y visualizaciones de Iris
 ├── housing_regression/        # Regresores, CV, métricas y visualizaciones

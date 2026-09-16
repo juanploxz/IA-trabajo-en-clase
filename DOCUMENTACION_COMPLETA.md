@@ -1,8 +1,8 @@
 # Proyectos académicos de inteligencia artificial en Python
 
-Este repositorio contiene siete aplicaciones independientes de inteligencia
+Este repositorio contiene ocho ejercicios independientes de inteligencia
 artificial, aprendizaje por refuerzo (Reinforcement Learning, **RL**) y
-aprendizaje supervisado:
+aprendizaje supervisado y generación de datos:
 
 1. **GridWorld 15×15 con Value Iteration:** un agente calcula y recorre el
    camino óptimo entre un inicio y una meta, evitando cinco obstáculos.
@@ -19,9 +19,12 @@ aprendizaje supervisado:
    log-lineal y árbol mediante holdout y validación cruzada.
 7. **Subajuste y sobreajuste:** compara K-NN y árboles sobre Wine y Breast
    Cancer mediante particiones 50/50 y 40/60, CV y curvas de complejidad.
+8. **Recta con ruido:** genera y dibuja 100 coordenadas aleatorias alrededor
+   de una recta, con dispersión normal configurable.
 
-Cada ejercicio tiene su propio archivo ejecutable, paquete, documentación,
-pruebas y resultados. De esta manera se puede estudiar o ejecutar uno sin
+Cada ejercicio tiene su propio archivo ejecutable, documentación y resultados.
+Los ejercicios anteriores incluyen paquetes y pruebas automáticas. De esta
+manera se puede estudiar o ejecutar uno sin
 mezclar su lógica con la de los demás.
 
 ## Contenido
@@ -36,6 +39,7 @@ mezclar su lógica con la de los demás.
 - [Aplicación 5: comparación de particiones](#aplicación-5-comparación-de-particiones-iris)
 - [Aplicación 6: regresión](#aplicación-6-regresión-con-california-housing)
 - [Aplicación 7: subajuste y sobreajuste](#aplicación-7-subajuste-y-sobreajuste)
+- [Aplicación 8: recta con ruido](#aplicación-8-recta-con-ruido)
 - [Pruebas y validación](#pruebas-y-validación)
 - [Solución de problemas](#solución-de-problemas)
 - [Cómo presentar el trabajo](#cómo-presentar-el-trabajo)
@@ -122,6 +126,12 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 
 ## Estructura del proyecto
 
+El ejercicio 8 se ejecuta con:
+
+```powershell
+.\.venv\Scripts\python.exe recta_con_ruido.py
+```
+
 ```text
 .
 ├── main.py                         # Entrada de GridWorld
@@ -131,12 +141,14 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 ├── iris_split_comparison.py        # Comparación Iris 60/40, 70/30 y 80/20
 ├── california_housing_regression.py # Comparación de cuatro regresores
 ├── classification_fit_comparison.py # Subajuste/sobreajuste en dos datasets
+├── recta_con_ruido.py               # 100 puntos aleatorios y recta ideal
 ├── MNIST_RL_README.md              # Referencia resumida de MNIST
 ├── Q_LEARNING_README.md            # Documentación completa de Q-Learning
 ├── IRIS_CLASSIFICATION_README.md    # Documentación completa de Iris
 ├── IRIS_SPLIT_COMPARISON_README.md  # Análisis de las tres particiones
 ├── CALIFORNIA_HOUSING_README.md      # Regresión y validación cruzada
 ├── CLASSIFICATION_FIT_README.md       # Ajuste y curvas de complejidad
+├── RECTA_RUIDO_README.md             # Generación y dibujo de coordenadas
 ├── gridworld/
 │   ├── __init__.py
 │   ├── config.py                   # Parámetros y obstáculos
@@ -191,7 +203,9 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── clasificadores_ajuste_metricas.png
 │   ├── clasificadores_ajuste_knn.png
 │   ├── clasificadores_ajuste_arbol.png
-│   └── clasificadores_ajuste_*.csv
+│   ├── clasificadores_ajuste_*.csv
+│   ├── recta_con_ruido.png
+│   └── recta_con_ruido.csv
 ├── requirements.txt
 ├── run.bat                         # Inicio automático de GridWorld en Windows
 └── run.sh                          # Inicio automático de GridWorld en Unix
@@ -1005,6 +1019,35 @@ prueba se estancan o empeoran.
 
 ![Curva del árbol](outputs/clasificadores_ajuste_arbol.png)
 
+# Aplicación 8: recta con ruido
+
+El archivo independiente `recta_con_ruido.py` genera 100 pares `(x, y)`.
+La ecuación de una recta es `y = m*x + b`; para simular dispersión se añade
+un término aleatorio: `y = m*x + b + ε`.
+
+Por defecto, `x` se distribuye uniformemente entre 0 y 10, la pendiente es
+`m=2`, el intercepto es `b=1` y `ε` sigue una distribución normal de media
+cero y desviación estándar 2. La semilla 42 permite repetir la muestra.
+
+```powershell
+# Dibujar los puntos y la recta ideal
+.\.venv\Scripts\python.exe recta_con_ruido.py
+
+# Guardar los resultados sin abrir una ventana
+.\.venv\Scripts\python.exe recta_con_ruido.py --no-gui
+
+# Cambiar pendiente, intercepto y dispersión
+.\.venv\Scripts\python.exe recta_con_ruido.py --m 3 --b -2 --noise 1 --seed 42
+```
+
+La figura `output/recta_con_ruido.png` superpone los puntos y la recta sin
+ruido. El archivo `output/recta_con_ruido.csv` contiene 100 filas y las columnas
+`x`, `y`, `y_sin_ruido` y `ruido`. Con `--noise 0` todos los puntos caen sobre
+la recta. Al aumentar este parámetro, aumenta la dispersión vertical esperada.
+Este ejercicio genera datos; no entrena un modelo de regresión.
+
+Consulte [la guía del ejercicio](RECTA_RUIDO_README.md) para ver todas las opciones.
+
 # Pruebas y validación
 
 Ejecute toda la batería:
@@ -1095,7 +1138,10 @@ Después de instalar dependencias:
 # 10. Analizar subajuste y sobreajuste
 .\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
 
-# 11. Ejecutar todas las pruebas
+# 11. Generar los puntos sobre una recta con ruido
+.\.venv\Scripts\python.exe recta_con_ruido.py --no-gui
+
+# 12. Ejecutar todas las pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
