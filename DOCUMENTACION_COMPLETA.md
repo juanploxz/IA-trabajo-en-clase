@@ -1080,10 +1080,32 @@ El modelo principal es `StandardScaler → 13 entradas → 16 neuronas sigmoides
 capa oculta. La salida softmax convierte los valores de las tres clases en
 probabilidades que suman uno.
 
+Todas las neuronas de una capa se conectan con todas las de la siguiente:
+`W1` contiene `13 × 16 = 208` pesos y `W2` contiene `16 × 3 = 48`.
+Con 16 sesgos ocultos y tres sesgos de salida, hay **275 parámetros
+entrenables**. Cada entrada influye en las tres clases a través de las 16
+neuronas ocultas; no hay conexiones directas de entrada a salida.
+
+```text
+x_scaled = (x - media_train) / escala_train
+h = sigmoid(x_scaled @ W1 + b1)
+p = softmax(h @ W2 + b2)
+```
+
+Aquí `@` es multiplicación matricial, `h` tiene 16 componentes y `p` contiene
+las tres probabilidades. El escalador se ajusta solo con entrenamiento.
+
 Adam optimiza entropía cruzada con regularización L2 (`alpha=0.0001`). Ese
 costo diferenciable no es el porcentaje de errores: también se informa por
 separado `error = 1 - accuracy`. Se usan lotes de 16 muestras y hasta 2 000
 épocas; el entrenamiento puede detenerse antes si el costo deja de mejorar.
+
+En cada lote, backpropagation calcula los gradientes del costo y Adam
+actualiza las dos matrices de pesos y ambos vectores de sesgos. Una época
+recorre las 124 muestras: siete lotes de 16 y uno de 12, es decir, ocho
+actualizaciones. El ajuste final seleccionado realizó 323 épocas y 2 584
+actualizaciones, sin contar los ajustes de CV, las otras tasas ni la red 2D.
+El máximo de 2 000 se refiere a épocas, no a actualizaciones individuales.
 
 ## Split, cross validation y learning rate
 
@@ -1115,8 +1137,14 @@ pero la selección usa CV, no la menor pérdida de entrenamiento ni el test.
 `ann_wine_frontera.png` muestra una red auxiliar entrenada únicamente con
 alcohol y flavanoides, usando los mismos índices de train/test y la tasa
 seleccionada. Esta frontera 2D no representa exactamente el modelo principal
-de 13 atributos. Los cinco CSV conservan métricas, resultados por pliegue,
-resumen por tasa, predicciones y costos por época.
+de 13 atributos. Los siete CSV conservan métricas, resultados por pliegue,
+resumen por tasa, predicciones, costos por época, parámetros y escalado.
+`ann_wine_parametros.csv` permite inspeccionar cada conexión y sesgo mediante
+las columnas `capa`, `tipo`, `origen`, `destino` y `valor`; contiene únicamente
+el modelo principal seleccionado de 13 atributos. `ann_wine_escalado.csv`
+guarda los 13 atributos con su media y escala de entrenamiento. La terminal
+también muestra la arquitectura, parámetros, épocas, actualizaciones y las
+métricas completas, incluidas precisión y recall macro.
 
 Con la configuración predeterminada, las tres tasas empatan en F1 macro de CV:
 98,34 % ± 2,27 puntos. Se elige `0.001` por desempate, sin evidencia de que

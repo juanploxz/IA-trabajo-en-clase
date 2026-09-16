@@ -61,6 +61,32 @@ a una sola de las tres clases: sus probabilidades suman uno y la predicción
 es la clase de mayor probabilidad. En este ejercicio la sigmoide se aplica
 a la capa oculta y softmax a la salida multiclase.
 
+La red es **totalmente conectada entre capas consecutivas**: cada una de las
+13 entradas conecta con las 16 neuronas ocultas, y cada neurona oculta conecta
+con las tres salidas. Así, cada entrada puede influir en cada clase a través
+de la capa oculta; no hay conexiones directas de entrada a salida.
+
+| Componente | Dimensiones | Cantidad |
+|---|---|---:|
+| Pesos de entrada a oculta, `W1` | `13 × 16` | 208 |
+| Pesos de oculta a salida, `W2` | `16 × 3` | 48 |
+| Sesgos ocultos, `b1` | `16` | 16 |
+| Sesgos de salida, `b2` | `3` | 3 |
+| Total de parámetros entrenables | 256 pesos + 19 sesgos | **275** |
+
+Para una muestra, la propagación hacia adelante es:
+
+```text
+x_scaled = (x - media_train) / escala_train
+h = sigmoid(x_scaled @ W1 + b1)
+p = softmax(h @ W2 + b2)
+clase_predicha = argmax(p)
+```
+
+`@` representa multiplicación matricial. `x` tiene 13 valores, `h` tiene 16
+y `p` contiene las tres probabilidades. El escalador aprende medias y escalas
+solo del entrenamiento y no se actualiza mediante backpropagation.
+
 | Parámetro | Configuración predeterminada |
 |---|---|
 | Capa oculta | 16 neuronas, una capa |
@@ -97,6 +123,23 @@ El error de clasificación no es la función usada para actualizar los pesos.
 Dos modelos pueden acertar las mismas etiquetas y tener log-loss diferente
 porque asignan probabilidades distintas. Aquí no se emplea error cuadrático
 medio como costo de clasificación.
+
+## Cómo se iteran los pesos
+
+Cada mini-batch recorre la red y produce probabilidades. Se calcula el costo;
+backpropagation obtiene sus gradientes respecto a `W1`, `b1`, `W2` y `b2`.
+Adam usa esos gradientes y sus estimaciones acumuladas para actualizar pesos
+y sesgos. El siguiente lote usa los parámetros ya actualizados. Una época
+completa recorre todas las muestras de entrenamiento, y el proceso se repite
+hasta satisfacer el criterio de parada o llegar al máximo de épocas.
+
+Con 124 muestras y lotes de 16 hay `ceil(124 / 16) = 8` actualizaciones por
+época: siete lotes de 16 y uno de 12. El modelo principal seleccionado realizó
+323 épocas, equivalentes a **2 584 actualizaciones**. Esta cantidad corresponde
+a ese ajuste final; no suma los entrenamientos de CV, las otras tasas ni la
+red auxiliar de la frontera. `--max-iter 2000` establece el máximo de épocas,
+no el máximo de actualizaciones. Los parámetros entrenados se exportan para
+poder inspeccionar todas las conexiones.
 
 ## ¿Qué hace el learning rate?
 
@@ -188,10 +231,34 @@ Las referencias incluidas en GitHub están en `outputs/`.
 | `ann_wine_learning_rates.csv` | Media, desviación y épocas de CV por tasa: 3 filas |
 | `ann_wine_predicciones.csv` | Índice original, clase real, predicción y probabilidades: 54 filas |
 | `ann_wine_costos.csv` | Costo de entrenamiento por tasa y época |
+| `ann_wine_parametros.csv` | Los 256 pesos y 19 sesgos finales del modelo principal seleccionado |
+| `ann_wine_escalado.csv` | Media y escala de entrenamiento para cada uno de los 13 atributos |
 
 Los CSV y las figuras usan etiquetas numéricas `0`, `1` y `2`, correspondientes
 a los cultivares 1, 2 y 3 del reporte de terminal. Cambiar opciones puede cambiar los
 resultados y el número de filas de los archivos de CV y costo.
+
+El archivo de parámetros contiene las columnas `capa`, `tipo`, `origen`,
+`destino` y `valor`. La primera matriz identifica las entradas con los nombres
+de los 13 atributos de Wine y las neuronas ocultas como `h1` a `h16`. La
+segunda une esas neuronas con `clase_0`, `clase_1` y `clase_2`. Los sesgos usan
+`origen=1`, que representa una entrada constante. Son los valores finales
+del modelo seleccionado de 13 atributos, no un historial de pesos por lote
+ni los parámetros de las otras tasas o del modelo 2D.
+
+El CSV de escalado usa `atributo`, `media` y `escala`. Junto a los parámetros
+permite seguir numéricamente las ecuaciones de propagación hacia adelante.
+Puede inspeccionar los archivos desde PowerShell:
+
+```powershell
+Import-Csv output\ann_wine_parametros.csv | Select-Object -First 10
+Import-Csv output\ann_wine_escalado.csv
+Import-Csv output\ann_wine_metricas.csv | Format-Table
+```
+
+La terminal también informa arquitectura, tamaños de las matrices, cantidad
+de parámetros, épocas y actualizaciones, además de accuracy, precisión macro,
+recall macro, F1 macro, error y log-loss.
 
 ## Opciones disponibles
 

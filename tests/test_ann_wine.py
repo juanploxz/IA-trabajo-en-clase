@@ -12,7 +12,7 @@ import numpy as np
 from sklearn.datasets import load_wine
 from sklearn.model_selection import cross_validate, train_test_split
 
-from ann_wine import ejecutar_experimento, exportar_resultados
+from ann_wine import describir_red, ejecutar_experimento, exportar_resultados
 
 
 class TestANNWine(unittest.TestCase):
@@ -64,6 +64,10 @@ class TestANNWine(unittest.TestCase):
         self.assertEqual(ann.hidden_layer_sizes, (16,))
         self.assertEqual(ann.coefs_[0].shape, (13, 16))
         self.assertEqual(ann.coefs_[1].shape, (16, 3))
+        red = describir_red(resultado)
+        self.assertEqual(red["dimensiones"], [13, 16, 3])
+        self.assertEqual((red["pesos"], red["sesgos"], red["parametros"]), (256, 19, 275))
+        self.assertEqual(red["actualizaciones"], 8 * ann.n_iter_)
         probabilidades = resultado["probabilities"]
         self.assertEqual(probabilidades.shape, (54, 3))
         self.assertTrue(np.isfinite(probabilidades).all())
@@ -130,6 +134,8 @@ class TestANNWine(unittest.TestCase):
             "ann_wine_cv.csv": 15,
             "ann_wine_predicciones.csv": 54,
             "ann_wine_costos.csv": sum(map(len, self.resultado["loss_curves"].values())),
+            "ann_wine_parametros.csv": 275,
+            "ann_wine_escalado.csv": 13,
         }
         with tempfile.TemporaryDirectory() as temporal:
             directorio = Path(temporal) / "resultados"
@@ -147,6 +153,32 @@ class TestANNWine(unittest.TestCase):
                         [int(fila["clase_predicha"]) for fila in filas],
                         self.resultado["predictions"].tolist(),
                     )
+
+            # Reconstruir una predicción solo con los CSV comprueba conexiones,
+            # orientación de W, sesgos y escalado, no solo cantidades de filas.
+            with (directorio / "ann_wine_parametros.csv").open(encoding="utf-8-sig", newline="") as archivo:
+                parametros = list(csv.DictReader(archivo))
+            with (directorio / "ann_wine_escalado.csv").open(encoding="utf-8-sig", newline="") as archivo:
+                escalado = list(csv.DictReader(archivo))
+            nombres = [fila["atributo"] for fila in escalado]
+            activacion = (self.resultado["x_test"] - np.array([
+                float(fila["media"]) for fila in escalado
+            ])) / np.array([float(fila["escala"]) for fila in escalado])
+            for capa, destinos in ((1, [f"h{i + 1}" for i in range(16)]),
+                                    (2, [f"clase_{i}" for i in range(3)])):
+                valores = {(fila["tipo"], fila["origen"], fila["destino"]): float(fila["valor"])
+                           for fila in parametros if int(fila["capa"]) == capa}
+                pesos = np.array([[valores[("peso", origen, destino)] for destino in destinos]
+                                  for origen in nombres])
+                sesgos = np.array([valores[("sesgo", "1", destino)] for destino in destinos])
+                z = activacion @ pesos + sesgos
+                if capa == 1:
+                    activacion = 1.0 / (1.0 + np.exp(-z))
+                else:
+                    exp = np.exp(z - z.max(axis=1, keepdims=True))
+                    activacion = exp / exp.sum(axis=1, keepdims=True)
+                nombres = destinos
+            np.testing.assert_allclose(activacion, self.resultado["probabilities"], atol=1e-12)
 
     def test_parametros_invalidos_fallan_antes_de_entrenar(self) -> None:
         casos = [

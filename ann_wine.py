@@ -125,6 +125,7 @@ def ejecutar_experimento(learning_rates=(0.001, 0.01, 0.1), hidden_units=16,
         "confusion": confusion_matrix(y_test, predicciones, labels=[0, 1, 2]),
         "predictions": predicciones, "probabilities": modelo.predict_proba(x_test),
         "seed": seed, "hidden_units": hidden_units,
+        "feature_names": tuple(wine.feature_names),
         "report": classification_report(
             y_test, predicciones, target_names=["Cultivar 1", "Cultivar 2", "Cultivar 3"],
             zero_division=0,
@@ -139,10 +140,56 @@ def _guardar_csv(ruta, filas):
         escritor.writerows(filas)
 
 
+def describir_red(resultado):
+    """Expone dimensiones reales y entrenamiento de la ANN principal ajustada."""
+    ann = resultado["model"].named_steps["ann"]
+    dimensiones = [ann.coefs_[0].shape[0], *(w.shape[1] for w in ann.coefs_)]
+    pesos = sum(w.size for w in ann.coefs_)
+    sesgos = sum(b.size for b in ann.intercepts_)
+    batch_size = min(ann.batch_size, len(resultado["y_train"]))
+    lotes = int(np.ceil(len(resultado["y_train"]) / batch_size))
+    return {
+        "dimensiones": dimensiones,
+        "matrices": [w.shape for w in ann.coefs_],
+        "pesos": pesos, "sesgos": sesgos, "parametros": pesos + sesgos,
+        "epocas": ann.n_iter_, "lotes_por_epoca": lotes,
+        "actualizaciones": ann.n_iter_ * lotes,
+    }
+
+
+def parametros_red(resultado):
+    """Una fila por conexión o sesgo; incluye todas las entradas y tres salidas."""
+    ann = resultado["model"].named_steps["ann"]
+    origenes = list(resultado["feature_names"])
+    filas = []
+    for capa, (pesos, sesgos) in enumerate(zip(ann.coefs_, ann.intercepts_), start=1):
+        destinos = (
+            [f"clase_{clase}" for clase in ann.classes_]
+            if capa == len(ann.coefs_) else [f"h{j + 1}" for j in range(len(sesgos))]
+        )
+        for i, origen in enumerate(origenes):
+            for j, destino in enumerate(destinos):
+                filas.append({"capa": capa, "tipo": "peso", "origen": origen,
+                              "destino": destino, "valor": float(pesos[i, j])})
+        for j, destino in enumerate(destinos):
+            filas.append({"capa": capa, "tipo": "sesgo", "origen": "1",
+                          "destino": destino, "valor": float(sesgos[j])})
+        origenes = destinos
+    return filas
+
+
 def exportar_resultados(resultado, directorio):
-    """Guarda métricas, folds, selección de LR, predicciones y costos por época."""
+    """Guarda evaluación, costos y todos los pesos/sesgos del modelo principal."""
     directorio = Path(directorio)
     directorio.mkdir(parents=True, exist_ok=True)
+    _guardar_csv(directorio / "ann_wine_parametros.csv", parametros_red(resultado))
+    escalador = resultado["model"].named_steps["escalador"]
+    _guardar_csv(directorio / "ann_wine_escalado.csv", [
+        {"atributo": atributo, "media": float(media), "escala": float(escala)}
+        for atributo, media, escala in zip(
+            resultado["feature_names"], escalador.mean_, escalador.scale_,
+        )
+    ])
     _guardar_csv(directorio / "ann_wine_metricas.csv", [
         {"conjunto": nombre, "learning_rate": resultado["best_lr"], **metricas}
         for nombre, metricas in resultado["metrics"].items()
@@ -190,8 +237,19 @@ def main():
               f"F1 CV={fila['f1_mean']:.4f} ± {fila['f1_std']:.4f}; "
               f"épocas promedio={fila['epochs_mean']:.0f}")
     print(f"\nLearning rate seleccionado: {resultado['best_lr']:g}")
+    red = describir_red(resultado)
+    print("\nArquitectura: " + " -> ".join(map(str, red["dimensiones"])))
+    print("Cada capa está totalmente conectada con la siguiente.")
+    print(f"Matrices de pesos: {red['matrices']}; {red['pesos']} pesos + "
+          f"{red['sesgos']} sesgos = {red['parametros']} parámetros aprendidos.")
+    print(f"Backpropagation + Adam: {red['epocas']} épocas, "
+          f"{red['lotes_por_epoca']} lotes/época, "
+          f"{red['actualizaciones']} actualizaciones de los parámetros.")
+    print("\nMétricas de desempeño (precisión, recall y F1: promedio macro):")
     for nombre, metricas in resultado["metrics"].items():
         print(f"{nombre}: accuracy={metricas['accuracy']:.4f}; "
+              f"precisión={metricas['precision_macro']:.4f}; "
+              f"recall={metricas['recall_macro']:.4f}; "
               f"F1={metricas['f1_macro']:.4f}; error={metricas['error']:.4f}; "
               f"log-loss={metricas['log_loss']:.4f}")
     print("\nMatriz de confusión (filas reales, columnas predichas):")

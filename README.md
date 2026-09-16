@@ -83,10 +83,12 @@ Muestra los puntos junto a la recta ideal y guarda la figura y las coordenadas.
 ### 9. Red neuronal para Wine
 
 Entrena una ANN con 13 entradas, una capa oculta de 16 neuronas sigmoides y
-salida softmax para las tres clases. Reserva 30 % para prueba y compara tasas
+3 neuronas de salida softmax, con conexiones completas entre capas. Reserva
+30 % para prueba y compara tasas
 de aprendizaje `0.001`, `0.01` y `0.1` con CV estratificada de cinco pliegues
 solo sobre el 70 % de entrenamiento. Reporta resultados, curvas del costo y
-una frontera auxiliar entrenada con dos atributos.
+una frontera auxiliar entrenada con dos atributos. Exporta los 256 pesos,
+19 sesgos y el escalado para inspeccionar la red aprendida iterativamente.
 
 ## Instalación
 
