@@ -181,7 +181,7 @@ Las pruebas usan datos sintéticos positivos y no requieren internet. Verifican
 los cuatro modelos, partición, reproducibilidad, holdout, validación cruzada,
 líneas de estimación, CSV y generación de figuras.
 
-El proyecto completo contiene 50 pruebas automáticas.
+El proyecto completo contiene 56 pruebas automáticas.
 
 ## Limitaciones
 

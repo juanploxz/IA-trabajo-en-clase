@@ -138,7 +138,7 @@ tabla, calculadas con los cuatro atributos.
 Las seis pruebas de este ejercicio verifican la partición 70/30,
 estratificación, K-NN con `k=3`, métricas, reproducibilidad, modelos
 bidimensionales y generación real de PNG y CSV mediante la CLI. Junto con los
-ejercicios anteriores, la suite completa contiene 50 pruebas.
+ejercicios anteriores, la suite completa contiene 56 pruebas.
 
 ## Cómo exponer el ejercicio
 

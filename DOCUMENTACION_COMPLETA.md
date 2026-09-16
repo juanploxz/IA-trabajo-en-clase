@@ -1,6 +1,6 @@
 # Proyectos académicos de inteligencia artificial en Python
 
-Este repositorio contiene ocho ejercicios independientes de inteligencia
+Este repositorio contiene nueve ejercicios independientes de inteligencia
 artificial, aprendizaje por refuerzo (Reinforcement Learning, **RL**) y
 aprendizaje supervisado y generación de datos:
 
@@ -21,6 +21,8 @@ aprendizaje supervisado y generación de datos:
    Cancer mediante particiones 50/50 y 40/60, CV y curvas de complejidad.
 8. **Recta con ruido:** genera y dibuja 100 coordenadas aleatorias alrededor
    de una recta, con dispersión normal configurable.
+9. **ANN para Wine:** clasifica con una red neuronal sigmoide, split 70/30,
+   validación cruzada y comparación de tasas de aprendizaje.
 
 Cada ejercicio tiene su propio archivo ejecutable, documentación y resultados.
 Los ejercicios anteriores incluyen paquetes y pruebas automáticas. De esta
@@ -40,6 +42,7 @@ mezclar su lógica con la de los demás.
 - [Aplicación 6: regresión](#aplicación-6-regresión-con-california-housing)
 - [Aplicación 7: subajuste y sobreajuste](#aplicación-7-subajuste-y-sobreajuste)
 - [Aplicación 8: recta con ruido](#aplicación-8-recta-con-ruido)
+- [Aplicación 9: ANN para Wine](#aplicación-9-ann-para-wine)
 - [Pruebas y validación](#pruebas-y-validación)
 - [Solución de problemas](#solución-de-problemas)
 - [Cómo presentar el trabajo](#cómo-presentar-el-trabajo)
@@ -49,7 +52,7 @@ mezclar su lógica con la de los demás.
 | Componente | Resultado comprobado |
 |---|---:|
 | Python | 3.12.13, 64 bits |
-| Pruebas automáticas | 50/50 correctas |
+| Pruebas automáticas | 56/56 correctas |
 | GridWorld | Convergencia en 29 iteraciones |
 | Camino de GridWorld | 28 pasos, recompensa acumulada 73 |
 | MNIST entrenamiento | 60 000 imágenes |
@@ -65,6 +68,8 @@ mezclar su lógica con la de los demás.
 | Comparación de ajuste | 24 combinaciones de dataset, partición y modelo |
 | Mejor Breast Cancer 50/50 | K-NN(7): 96,14 % de prueba y 96,12 % de CV |
 | Subajuste Wine 40/60 | K-NN(51): 40,95 % de CV |
+| ANN Wine 70/30 | 53/54 aciertos; F1 macro 98,29 % |
+| Learning rate de ANN | 0.001, elegido por desempate en F1 de CV |
 | Dependencias | Sin conflictos según `pip check` |
 
 ## Inicio rápido
@@ -124,13 +129,19 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 .\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
 ```
 
-## Estructura del proyecto
-
-El ejercicio 8 se ejecuta con:
+### Generar puntos sobre una recta con ruido
 
 ```powershell
 .\.venv\Scripts\python.exe recta_con_ruido.py
 ```
+
+### Entrenar una ANN para Wine
+
+```powershell
+.\.venv\Scripts\python.exe ann_wine.py --no-gui
+```
+
+## Estructura del proyecto
 
 ```text
 .
@@ -142,6 +153,8 @@ El ejercicio 8 se ejecuta con:
 ├── california_housing_regression.py # Comparación de cuatro regresores
 ├── classification_fit_comparison.py # Subajuste/sobreajuste en dos datasets
 ├── recta_con_ruido.py               # 100 puntos aleatorios y recta ideal
+├── ann_wine.py                      # ANN sigmoide, CV y learning rate
+├── ann_wine_visualization.py        # Resultados y frontera auxiliar 2D
 ├── MNIST_RL_README.md              # Referencia resumida de MNIST
 ├── Q_LEARNING_README.md            # Documentación completa de Q-Learning
 ├── IRIS_CLASSIFICATION_README.md    # Documentación completa de Iris
@@ -149,6 +162,7 @@ El ejercicio 8 se ejecuta con:
 ├── CALIFORNIA_HOUSING_README.md      # Regresión y validación cruzada
 ├── CLASSIFICATION_FIT_README.md       # Ajuste y curvas de complejidad
 ├── RECTA_RUIDO_README.md             # Generación y dibujo de coordenadas
+├── ANN_WINE_README.md                # Arquitectura, costo, evaluación y frontera
 ├── gridworld/
 │   ├── __init__.py
 │   ├── config.py                   # Parámetros y obstáculos
@@ -183,7 +197,8 @@ El ejercicio 8 se ejecuta con:
 │   ├── test_iris_classifier.py
 │   ├── test_iris_split_comparison.py
 │   ├── test_housing_regression.py
-│   └── test_classification_fit.py
+│   ├── test_classification_fit.py
+│   └── test_ann_wine.py
 ├── output/
 │   ├── resultado_final.png         # Resultado de GridWorld
 │   ├── mnist_consulta_7.png        # Ejemplo de consulta MNIST
@@ -205,7 +220,10 @@ El ejercicio 8 se ejecuta con:
 │   ├── clasificadores_ajuste_arbol.png
 │   ├── clasificadores_ajuste_*.csv
 │   ├── recta_con_ruido.png
-│   └── recta_con_ruido.csv
+│   ├── recta_con_ruido.csv
+│   ├── ann_wine_resultados.png
+│   ├── ann_wine_frontera.png
+│   └── ann_wine_*.csv
 ├── requirements.txt
 ├── run.bat                         # Inicio automático de GridWorld en Windows
 └── run.sh                          # Inicio automático de GridWorld en Unix
@@ -230,7 +248,7 @@ Dependencias directas:
 - `matplotlib`: visualización de GridWorld.
 - `numpy`: cálculos numéricos, entrenamiento y almacenamiento de MNIST.
 - `Pillow`: lectura, preparación y visualización de imágenes.
-- `scikit-learn`: conjuntos Iris y California Housing, particiones, modelos,
+- `scikit-learn`: conjuntos Iris, Wine, Breast Cancer y California Housing, particiones, modelos,
   validación cruzada y métricas de aprendizaje supervisado.
 
 ### Windows
@@ -1048,6 +1066,77 @@ Este ejercicio genera datos; no entrena un modelo de regresión.
 
 Consulte [la guía del ejercicio](RECTA_RUIDO_README.md) para ver todas las opciones.
 
+# Aplicación 9: ANN para Wine
+
+El ejecutable `ann_wine.py` entrena una red neuronal para clasificar las 178
+muestras de Wine, que contiene 13 atributos numéricos y tres clases. El dataset
+viene incluido en scikit-learn y no necesita descargarse. La guía específica
+está en [ANN_WINE_README.md](ANN_WINE_README.md).
+
+## Arquitectura y función de costo
+
+El modelo principal es `StandardScaler → 13 entradas → 16 neuronas sigmoides
+→ 3 salidas softmax`. La sigmoide `σ(z) = 1 / (1 + exp(-z))` se aplica en la
+capa oculta. La salida softmax convierte los valores de las tres clases en
+probabilidades que suman uno.
+
+Adam optimiza entropía cruzada con regularización L2 (`alpha=0.0001`). Ese
+costo diferenciable no es el porcentaje de errores: también se informa por
+separado `error = 1 - accuracy`. Se usan lotes de 16 muestras y hasta 2 000
+épocas; el entrenamiento puede detenerse antes si el costo deja de mejorar.
+
+## Split, cross validation y learning rate
+
+La división estratificada 70/30 con semilla 42 deja 124 muestras para entrenar
+y 54 para la prueba final. Dentro de las 124 se aplica `StratifiedKFold` con
+cinco pliegues y barajado. Cada pliegue ajusta su propio escalador dentro del
+pipeline, sin usar las muestras de validación para calcular media o escala.
+
+Se comparan tasas iniciales `0.001`, `0.01` y `0.1` con los mismos pliegues.
+Se elige la de mayor F1 macro medio de CV y, en caso de empate, la menor tasa.
+Después se vuelve a entrenar el modelo elegido con las 124 muestras y se
+evalúa en las 54 reservadas. La tasa corresponde a `learning_rate_init` de
+Adam; el argumento `learning_rate` de MLPClassifier controla otro mecanismo
+utilizado por SGD.
+
+Una tasa pequeña puede requerir más épocas; una demasiado alta puede producir
+oscilaciones. Las curvas muestran el costo de entrenamiento de cada candidata,
+pero la selección usa CV, no la menor pérdida de entrenamiento ni el test.
+
+## Ejecutar y leer las figuras
+
+```powershell
+.\.venv\Scripts\python.exe ann_wine.py
+.\.venv\Scripts\python.exe ann_wine.py --no-gui
+.\.venv\Scripts\python.exe ann_wine.py --learning-rates 0.001 0.01 0.1 --max-iter 2000
+```
+
+`ann_wine_resultados.png` presenta resultados y curvas de costo.
+`ann_wine_frontera.png` muestra una red auxiliar entrenada únicamente con
+alcohol y flavanoides, usando los mismos índices de train/test y la tasa
+seleccionada. Esta frontera 2D no representa exactamente el modelo principal
+de 13 atributos. Los cinco CSV conservan métricas, resultados por pliegue,
+resumen por tasa, predicciones y costos por época.
+
+Con la configuración predeterminada, las tres tasas empatan en F1 macro de CV:
+98,34 % ± 2,27 puntos. Se elige `0.001` por desempate, sin evidencia de que
+sea superior a las otras dos. El modelo principal acierta 53 de 54 muestras
+de prueba (accuracy 98,15 %, error 1,85 %, F1 macro 98,29 %, log-loss 0,0667).
+El modelo auxiliar 2D obtiene 88,89 % de accuracy. Cada error en este test
+pequeño cambia el accuracy aproximadamente 1,85 puntos porcentuales.
+
+![Resultados de la ANN](outputs/ann_wine_resultados.png)
+
+![Frontera auxiliar con alcohol y flavanoides](outputs/ann_wine_frontera.png)
+
+## Temas para continuar
+
+Quedan por profundizar backpropagation, gradiente, saturación de la sigmoide,
+épocas y mini-batches, regularización y early stopping con validación. También
+conviene repetir varias semillas y usar CV anidada para evaluar todo el proceso
+de elección de hiperparámetros. La media de CV usada para elegir la tasa puede
+ser optimista; la prueba reservada aporta una evaluación separada.
+
 # Pruebas y validación
 
 Ejecute toda la batería:
@@ -1056,7 +1145,7 @@ Ejecute toda la batería:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Las 50 pruebas cubren:
+Las 56 pruebas cubren:
 
 - Dimensiones, posiciones y cinco obstáculos de GridWorld.
 - Movimientos fuera del tablero y bloqueo por obstáculos.
@@ -1095,7 +1184,13 @@ Las 50 pruebas cubren:
 - Curvas que incluyen `k=7`, `k=51` y árbol sin límite.
 - Exportación de 24 métricas, 120 folds, 64 puntos de complejidad y 823
   predicciones.
-- Generación real de las tres figuras del nuevo ejercicio.
+- Generación real de las tres figuras del ejercicio de ajuste.
+- Split Wine 70/30 reproducible, estratificación y folds sin acceso al test.
+- Escalado ajustado solo con entrenamiento, sigmoide oculta y salida softmax.
+- Selección de learning rate por F1 de CV con pliegues compartidos.
+- Coherencia de métricas, probabilidades y costos de entrenamiento.
+- Exportación de métricas, folds, tasas, costos y predicciones de la ANN.
+- Rechazo de parámetros inválidos antes del entrenamiento de la ANN.
 
 Validar las dependencias instaladas:
 
@@ -1141,7 +1236,10 @@ Después de instalar dependencias:
 # 11. Generar los puntos sobre una recta con ruido
 .\.venv\Scripts\python.exe recta_con_ruido.py --no-gui
 
-# 12. Ejecutar todas las pruebas
+# 12. Entrenar la ANN de Wine y seleccionar su learning rate
+.\.venv\Scripts\python.exe ann_wine.py --no-gui
+
+# 13. Ejecutar todas las pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
@@ -1380,6 +1478,9 @@ válido. Si reduce `--train-sizes` o cambia mucho `--cv-folds`, use también un
 
 # Comparar subajuste y sobreajuste
 .\.venv\Scripts\python.exe classification_fit_comparison.py --no-gui
+
+# Entrenar ANN sigmoide de Wine y comparar learning rates
+.\.venv\Scripts\python.exe ann_wine.py --no-gui
 
 # Ejecutar pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
