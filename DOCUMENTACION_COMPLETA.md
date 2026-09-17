@@ -1,6 +1,6 @@
 # Proyectos académicos de inteligencia artificial en Python
 
-Este repositorio contiene nueve ejercicios independientes de inteligencia
+Este repositorio contiene diez ejercicios independientes de inteligencia
 artificial, aprendizaje por refuerzo (Reinforcement Learning, **RL**) y
 aprendizaje supervisado y generación de datos:
 
@@ -23,6 +23,8 @@ aprendizaje supervisado y generación de datos:
    de una recta, con dispersión normal configurable.
 9. **ANN para Wine:** clasifica con una red neuronal sigmoide, split 70/30,
    validación cruzada y comparación de tasas de aprendizaje.
+10. **Comparación de MLP para Wine:** contrasta una y dos capas ocultas,
+    conservando datos, evaluación y optimizador para estudiar la arquitectura.
 
 Cada ejercicio tiene su propio archivo ejecutable, documentación y resultados.
 Los ejercicios anteriores incluyen paquetes y pruebas automáticas. De esta
@@ -43,6 +45,7 @@ mezclar su lógica con la de los demás.
 - [Aplicación 7: subajuste y sobreajuste](#aplicación-7-subajuste-y-sobreajuste)
 - [Aplicación 8: recta con ruido](#aplicación-8-recta-con-ruido)
 - [Aplicación 9: ANN para Wine](#aplicación-9-ann-para-wine)
+- [Aplicación 10: comparación de MLP](#aplicación-10-comparación-de-mlp-para-wine)
 - [Pruebas y validación](#pruebas-y-validación)
 - [Solución de problemas](#solución-de-problemas)
 - [Cómo presentar el trabajo](#cómo-presentar-el-trabajo)
@@ -52,7 +55,7 @@ mezclar su lógica con la de los demás.
 | Componente | Resultado comprobado |
 |---|---:|
 | Python | 3.12.13, 64 bits |
-| Pruebas automáticas | 56/56 correctas |
+| Pruebas automáticas | 62/62 correctas |
 | GridWorld | Convergencia en 29 iteraciones |
 | Camino de GridWorld | 28 pasos, recompensa acumulada 73 |
 | MNIST entrenamiento | 60 000 imágenes |
@@ -70,6 +73,7 @@ mezclar su lógica con la de los demás.
 | Subajuste Wine 40/60 | K-NN(51): 40,95 % de CV |
 | ANN Wine 70/30 | 53/54 aciertos; F1 macro 98,29 % |
 | Learning rate de ANN | 0.001, elegido por desempate en F1 de CV |
+| Comparación de MLP | Ambas redes: 53/54 aciertos; F1 macro 98,29 % |
 | Dependencias | Sin conflictos según `pip check` |
 
 ## Inicio rápido
@@ -141,6 +145,12 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 .\.venv\Scripts\python.exe ann_wine.py --no-gui
 ```
 
+### Comparar MLP de una y dos capas ocultas
+
+```powershell
+.\.venv\Scripts\python.exe mlp_wine_compare.py --no-gui
+```
+
 ## Estructura del proyecto
 
 ```text
@@ -155,6 +165,7 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 ├── recta_con_ruido.py               # 100 puntos aleatorios y recta ideal
 ├── ann_wine.py                      # ANN sigmoide, CV y learning rate
 ├── ann_wine_visualization.py        # Resultados y frontera auxiliar 2D
+├── mlp_wine_compare.py              # Comparación de dos arquitecturas MLP
 ├── MNIST_RL_README.md              # Referencia resumida de MNIST
 ├── Q_LEARNING_README.md            # Documentación completa de Q-Learning
 ├── IRIS_CLASSIFICATION_README.md    # Documentación completa de Iris
@@ -163,6 +174,7 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 ├── CLASSIFICATION_FIT_README.md       # Ajuste y curvas de complejidad
 ├── RECTA_RUIDO_README.md             # Generación y dibujo de coordenadas
 ├── ANN_WINE_README.md                # Arquitectura, costo, evaluación y frontera
+├── MLP_WINE_README.md                # Capas ocultas, learning rate y comparación
 ├── gridworld/
 │   ├── __init__.py
 │   ├── config.py                   # Parámetros y obstáculos
@@ -198,7 +210,8 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── test_iris_split_comparison.py
 │   ├── test_housing_regression.py
 │   ├── test_classification_fit.py
-│   └── test_ann_wine.py
+│   ├── test_ann_wine.py
+│   └── test_mlp_wine.py
 ├── output/
 │   ├── resultado_final.png         # Resultado de GridWorld
 │   ├── mnist_consulta_7.png        # Ejemplo de consulta MNIST
@@ -223,7 +236,11 @@ Use `--no-gui` si solo desea guardar las gráficas y archivos CSV.
 │   ├── recta_con_ruido.csv
 │   ├── ann_wine_resultados.png
 │   ├── ann_wine_frontera.png
-│   └── ann_wine_*.csv
+│   ├── ann_wine_*.csv
+│   ├── mlp_wine_comparacion.png
+│   ├── mlp_wine_learning_rates.png
+│   ├── mlp_wine_fronteras.png
+│   └── mlp_wine_*.csv
 ├── requirements.txt
 ├── run.bat                         # Inicio automático de GridWorld en Windows
 └── run.sh                          # Inicio automático de GridWorld en Unix
@@ -1165,6 +1182,71 @@ conviene repetir varias semillas y usar CV anidada para evaluar todo el proceso
 de elección de hiperparámetros. La media de CV usada para elegir la tasa puede
 ser optimista; la prueba reservada aporta una evaluación separada.
 
+# Aplicación 10: comparación de MLP para Wine
+
+El ejecutable independiente `mlp_wine_compare.py` compara dos perceptrones
+multicapa. La ANN del ejercicio 9 ya es un MLP: tiene una capa oculta. El
+nuevo modelo añade una segunda capa, manteniendo activación sigmoide oculta
+y salida softmax para las tres clases de Wine.
+
+| Modelo | Arquitectura | Pesos | Sesgos | Parámetros |
+|---|---|---:|---:|---:|
+| MLP anterior | `13 → 16 → 3` | 256 | 19 | 275 |
+| MLP de dos capas ocultas | `13 → 16 → 8 → 3` | 360 | 27 | 387 |
+
+Cada capa está completamente conectada con la siguiente. Ambos modelos
+mantienen Adam, L2 `alpha=0.0001`, lotes de 16, máximo de 2 000 épocas y
+semilla 42. La división estratificada es la misma de 124 muestras de
+entrenamiento y 54 de prueba. Los cinco folds de CV también son idénticos
+y el escalado se aprende dentro de cada fold.
+
+## Learning rate y comparación justa
+
+La tasa de aprendizaje `η` determina la escala de las actualizaciones. Adam
+parte de `learning_rate_init` y adapta las actualizaciones por parámetro.
+Una tasa pequeña puede avanzar lentamente; una grande puede causar
+inestabilidad. El argumento `learning_rate` del estimador corresponde a los
+esquemas de SGD y no controla esta ejecución de Adam.
+
+Cada arquitectura compara `0.001`, `0.01` y `0.1` y selecciona la tasa con
+mayor F1 macro medio de CV; un empate exacto favorece la menor. El test no
+interviene en esa selección. Se conserva entropía cruzada con L2 como costo,
+y se informa por separado el error de clasificación `1 - accuracy`.
+
+```powershell
+.\.venv\Scripts\python.exe mlp_wine_compare.py --no-gui
+```
+
+Las tres figuras muestran métricas y matrices de confusión, comparación de
+tasas y curvas del costo, y fronteras de dos modelos auxiliares entrenados
+solo con alcohol y flavanoides. Las métricas principales usan los 13
+atributos; los resultados 2D aparecen separados.
+
+Los ocho CSV conservan métricas, folds, tasas, confusión, costos,
+predicciones, parámetros y escalado de ambas redes. Consulte
+[MLP_WINE_README.md](MLP_WINE_README.md) para las opciones y resultados.
+
+Con las opciones predeterminadas, las seis combinaciones de arquitectura y
+tasa empatan en F1 macro de CV: 98,34 % ± 2,27 puntos. Ambas redes seleccionan
+`0.001` por desempate. En prueba producen las mismas etiquetas: 53 aciertos
+de 54, accuracy 98,15 %, precisión macro 98,25 %, recall macro 98,41 % y
+F1 macro 98,29 %. La red anterior necesita 323 épocas y la nueva 352;
+su log-loss de prueba pasa de 0,06670 a 0,06254. Esta leve diferencia en
+probabilidades no demuestra mejor generalización: el log-loss medio de CV
+con la tasa seleccionada es 0,03430 para la anterior y 0,04088 para la nueva.
+
+![Comparación de MLP](outputs/mlp_wine_comparacion.png)
+
+![Tasas y costos](outputs/mlp_wine_learning_rates.png)
+
+![Fronteras auxiliares](outputs/mlp_wine_fronteras.png)
+
+Añadir capas aumenta la capacidad, pero no garantiza una mejor clasificación.
+El test se reutiliza respecto al ejercicio anterior: esta comparación es
+exploratoria, no una evaluación en muestras que nunca se hayan examinado.
+Para una conclusión más sólida hacen falta varias semillas y CV anidada o
+una prueba externa sin utilizar.
+
 # Pruebas y validación
 
 Ejecute toda la batería:
@@ -1173,7 +1255,7 @@ Ejecute toda la batería:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Las 56 pruebas cubren:
+Las 62 pruebas cubren:
 
 - Dimensiones, posiciones y cinco obstáculos de GridWorld.
 - Movimientos fuera del tablero y bloqueo por obstáculos.
@@ -1219,6 +1301,12 @@ Las 56 pruebas cubren:
 - Coherencia de métricas, probabilidades y costos de entrenamiento.
 - Exportación de métricas, folds, tasas, costos y predicciones de la ANN.
 - Rechazo de parámetros inválidos antes del entrenamiento de la ANN.
+- Partición estratificada y folds idénticos para ambas arquitecturas MLP.
+- Arquitecturas, activaciones y escalado ajustado solo sobre entrenamiento.
+- Selección de tasas por F1 de CV y desempate reproducible.
+- Recálculo de métricas y consistencia con la red del ejercicio anterior.
+- Exportación completa de los ocho CSV de comparación, separados por modelo.
+- Reconstrucción de probabilidades a partir de pesos, sesgos y escalado exportados.
 
 Validar las dependencias instaladas:
 
@@ -1267,7 +1355,10 @@ Después de instalar dependencias:
 # 12. Entrenar la ANN de Wine y seleccionar su learning rate
 .\.venv\Scripts\python.exe ann_wine.py --no-gui
 
-# 13. Ejecutar todas las pruebas
+# 13. Comparar MLP de una y dos capas ocultas
+.\.venv\Scripts\python.exe mlp_wine_compare.py --no-gui
+
+# 14. Ejecutar todas las pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
@@ -1509,6 +1600,9 @@ válido. Si reduce `--train-sizes` o cambia mucho `--cv-folds`, use también un
 
 # Entrenar ANN sigmoide de Wine y comparar learning rates
 .\.venv\Scripts\python.exe ann_wine.py --no-gui
+
+# Comparar arquitecturas MLP
+.\.venv\Scripts\python.exe mlp_wine_compare.py --no-gui
 
 # Ejecutar pruebas
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v

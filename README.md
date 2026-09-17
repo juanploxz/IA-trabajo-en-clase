@@ -1,6 +1,6 @@
 # IA: aprendizaje por refuerzo y modelos predictivos
 
-Repositorio académico en Python con nueve ejercicios independientes de
+Repositorio académico en Python con diez ejercicios independientes de
 inteligencia artificial. Incluye planificación mediante MDP, aprendizaje por
 refuerzo, reconocimiento de dígitos, clasificación, análisis de ajuste y
 regresión supervisada, generación de datos con ruido y redes neuronales.
@@ -23,6 +23,7 @@ algoritmos de los ejercicios anteriores. La explicación conjunta y ampliada est
 | 7 | Subajuste y sobreajuste | K-NN y árboles con Wine/Breast Cancer | `classification_fit_comparison.py` | [Guía](CLASSIFICATION_FIT_README.md) |
 | 8 | Puntos sobre una recta con ruido | 100 muestras aleatorias y dispersión | `recta_con_ruido.py` | [Guía](RECTA_RUIDO_README.md) |
 | 9 | Wine con red neuronal | ANN sigmoide, split 70/30 y selección de learning rate con CV | `ann_wine.py` | [Guía](ANN_WINE_README.md) |
+| 10 | Comparación de MLP para Wine | Una frente a dos capas ocultas y learning rate | `mlp_wine_compare.py` | [Guía](MLP_WINE_README.md) |
 
 ## Resumen de cada ejercicio
 
@@ -90,6 +91,14 @@ solo sobre el 70 % de entrenamiento. Reporta resultados, curvas del costo y
 una frontera auxiliar entrenada con dos atributos. Exporta los 256 pesos,
 19 sesgos y el escalado para inspeccionar la red aprendida iterativamente.
 
+### 10. Comparación de perceptrones multicapa
+
+La ANN anterior ya es un MLP. Este ejercicio compara su arquitectura
+`13 → 16 → 3` con otra de dos capas ocultas, `13 → 16 → 8 → 3`. Mantiene
+los mismos datos, partición 70/30, pliegues de CV y configuración de Adam.
+Selecciona una tasa por arquitectura mediante F1 de CV y muestra métricas,
+costos, matrices de confusión y fronteras auxiliares de dos atributos.
+
 ## Instalación
 
 Requiere Python 3.10 o superior.
@@ -149,6 +158,9 @@ Los comandos siguientes usan PowerShell. En Linux o macOS sustituya
 
 # ANN sigmoide para Wine, validación cruzada y learning rate
 .\.venv\Scripts\python.exe ann_wine.py --no-gui
+
+# Comparar MLP de una y dos capas ocultas
+.\.venv\Scripts\python.exe mlp_wine_compare.py --no-gui
 ```
 
 Los comandos que aceptan `--no-gui` guardan resultados sin abrir ventanas.
@@ -158,7 +170,7 @@ Use `--help` en cada ejecutable para consultar sus opciones.
 
 | Experimento | Resultado verificado |
 |---|---:|
-| Pruebas automáticas | 56/56 correctas |
+| Pruebas automáticas | 62/62 correctas |
 | Value Iteration | 28 pasos; recompensa 73 |
 | MNIST REINFORCE | 92,58 % de exactitud |
 | Q-Learning | 28 pasos; recompensa 73 |
@@ -168,6 +180,7 @@ Use `--help` en cada ejecutable para consultar sus opciones.
 | Mejor ajuste en Breast Cancer | K-NN(7): prueba 96,14 % en 50/50 |
 | Subajuste más claro en Wine 40/60 | K-NN(51): CV 40,95 % |
 | ANN Wine 70/30 | 53/54 aciertos; F1 macro 98,29 %; F1 CV 98,34 % ± 2,27 puntos |
+| MLP Wine: una frente a dos capas ocultas | Ambas: 53/54 aciertos; la capa adicional no mejoró las etiquetas |
 
 El 100 % de LDA con 80/20 corresponde a una única partición pequeña y no
 demuestra superioridad general. La documentación explica esta limitación y
@@ -211,6 +224,14 @@ propone validación cruzada para comparaciones futuras.
 
 ![Frontera auxiliar de la ANN con dos atributos](outputs/ann_wine_frontera.png)
 
+### Comparación de MLP para Wine
+
+![Métricas y matrices de confusión de ambos MLP](outputs/mlp_wine_comparacion.png)
+
+![Learning rates y costos de los MLP](outputs/mlp_wine_learning_rates.png)
+
+![Fronteras auxiliares de los MLP](outputs/mlp_wine_fronteras.png)
+
 Los PNG y CSV de referencia están en `outputs/`. Las nuevas ejecuciones escriben
 en `output/`, carpeta ignorada por Git salvo su archivo `.gitkeep`.
 
@@ -228,11 +249,12 @@ en `output/`, carpeta ignorada por Git salvo su archivo `.gitkeep`.
 ├── recta_con_ruido.py
 ├── ann_wine.py                 # ANN sigmoide, CV y tasa de aprendizaje
 ├── ann_wine_visualization.py   # Resultados y frontera auxiliar 2D
+├── mlp_wine_compare.py         # MLP de una y dos capas ocultas
 ├── gridworld/                 # Entorno y algoritmos tabulares
 ├── iris_classifier/           # Modelos, métricas y visualizaciones de Iris
 ├── housing_regression/        # Regresores, CV, métricas y visualizaciones
 ├── classification_fit/        # Análisis de subajuste y sobreajuste
-├── tests/                     # 56 pruebas automáticas
+├── tests/                     # 62 pruebas automáticas
 ├── examples/                  # Imagen de ejemplo para MNIST
 ├── outputs/                   # Resultados de referencia visibles en GitHub
 ├── data/mnist/.gitkeep        # Datos descargados localmente
@@ -259,3 +281,6 @@ generación de PNG/CSV. También comprueba las curvas de complejidad, la
 estratificación y las señales de subajuste/sobreajuste en ambos datasets.
 En la ANN verifica la separación de train/test y folds, el escalado sin fuga,
 las activaciones, la selección de tasa por CV y la coherencia de resultados.
+En la comparación MLP comprueba particiones compartidas, arquitecturas,
+selección por CV, métricas, los ocho CSV y la reconstrucción de probabilidades
+desde los pesos y el escalado exportados.
