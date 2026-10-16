@@ -22,3 +22,12 @@ data/mnist/*.part
 data/california_housing/*
 !data/california_housing/.gitkeep
 models/*.npz
+resultados_semana08_transfer/
+resultados_word2vec/
+resultados_word2vec_guia/
+resultados_yolo_intro/
+resultados/semana_08/yolo/
+.ipynb_checkpoints/
+.env
+.env.*
+!.env.example

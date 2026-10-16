@@ -27,6 +27,19 @@ algoritmos de los ejercicios anteriores. La explicación conjunta y ampliada est
 
 ## Resumen de cada ejercicio
 
+### Notebooks de los talleres de las semanas 8 y 9
+
+La carpeta [notebooks](notebooks/README.md) contiene únicamente los cuatro
+talleres solicitados: transfer learning con datos propios, YOLO con una imagen
+propia, asistente documental NVIDIA y Word2Vec. Conserva las rutas, nombres y
+consignas originales de la guía EAFIT bajo `notebooks/lecture8` y
+`notebooks/Lecture9`, con las soluciones integradas y una explicación de cada
+actividad. No duplica los demás ejercicios ni incluye ejemplos adicionales.
+
+El código y las pruebas offline están preparados; la ejecución con imágenes,
+pesos reales y credenciales, y el análisis empírico, siguen pendientes. No se
+presentan como talleres ya ejecutados.
+
 ### 1. Value Iteration
 
 Resuelve un GridWorld determinista de 15×15 con cinco obstáculos. El algoritmo
