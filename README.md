@@ -1,18 +1,20 @@
 # IA: aprendizaje por refuerzo y modelos predictivos
 
-Repositorio académico en Python con diez ejercicios independientes de
-inteligencia artificial. Incluye planificación mediante MDP, aprendizaje por
+Repositorio académico con **14 actividades: 10 ejercicios en Python y 4 talleres
+en notebooks Jupyter**. Incluye planificación mediante MDP, aprendizaje por
 refuerzo, reconocimiento de dígitos, clasificación, análisis de ajuste y
 regresión supervisada, generación de datos con ruido y redes neuronales.
 
-Cada ejercicio tiene un ejecutable propio, documentación y resultados
-reproducibles. El repositorio también incluye pruebas automáticas para los
-algoritmos de los ejercicios anteriores. La explicación conjunta y ampliada está en
+Los ejercicios 1–10 tienen scripts, documentación y resultados de referencia.
+Los talleres 11–14 corresponden a las semanas 8 y 9: conservan los notebooks
+originales de la guía con el código resuelto; su ejecución con datos reales y
+análisis empírico siguen pendientes. El repositorio también incluye pruebas
+automáticas para los primeros diez ejercicios. Su explicación ampliada está en
 [DOCUMENTACION_COMPLETA.md](DOCUMENTACION_COMPLETA.md).
 
 ## Ejercicios
 
-| # | Ejercicio | Método | Ejecutable | Documentación |
+| # | Ejercicio o taller | Método | Archivo | Documentación |
 |---:|---|---|---|---|
 | 1 | GridWorld 15×15 | Value Iteration | `main.py` | [Guía](VALUE_ITERATION_README.md) |
 | 2 | Reconocimiento de MNIST | REINFORCE como bandido contextual | `mnist_rl.py` | [Guía](MNIST_RL_README.md) |
@@ -24,6 +26,13 @@ algoritmos de los ejercicios anteriores. La explicación conjunta y ampliada est
 | 8 | Puntos sobre una recta con ruido | 100 muestras aleatorias y dispersión | `recta_con_ruido.py` | [Guía](RECTA_RUIDO_README.md) |
 | 9 | Wine con red neuronal | ANN sigmoide, split 70/30 y selección de learning rate con CV | `ann_wine.py` | [Guía](ANN_WINE_README.md) |
 | 10 | Comparación de MLP para Wine | Una frente a dos capas ocultas y learning rate | `mlp_wine_compare.py` | [Guía](MLP_WINE_README.md) |
+| 11 | Clasificador de imágenes propias — semana 8 | Transfer learning y fine-tuning con EfficientNetB0 | [Notebook](notebooks/lecture8/transfer_learning/taller_transfer_learning_datos_propios_keras3.ipynb) | [Guía](notebooks/README.md) |
+| 12 | Detección en una imagen propia — semana 8 | YOLO y comparación de umbrales | [Notebook](notebooks/lecture8/yolo/Lecture_08_Yolo_Intro.ipynb) | [Guía](notebooks/README.md) |
+| 13 | Asistente sobre documentos — semana 9 | NVIDIA, PDF y Gradio | [Notebook](notebooks/Lecture9/05_ejercicio_nvidia_documentos.ipynb) | [Guía](notebooks/README.md) |
+| 14 | Embeddings y analogías — semana 9 | Word2Vec, similitud coseno y PCA 3D | [Notebook](notebooks/Lecture9/tokenization_Introduction.ipynb) | [Guía](notebooks/README.md) |
+
+La numeración 1–14 es el índice de actividades del repositorio, no el número de
+semana. Los cuatro talleres nuevos aparecen como **11, 12, 13 y 14**.
 
 ## Resumen de cada ejercicio
 
@@ -112,9 +121,38 @@ los mismos datos, partición 70/30, pliegues de CV y configuración de Adam.
 Selecciona una tasa por arquitectura mediante F1 de CV y muestra métricas,
 costos, matrices de confusión y fronteras auxiliares de dos atributos.
 
+### 11. Transfer learning con imágenes propias — semana 8
+
+Clasifica tres clases con EfficientNetB0, separación 70/15/15, entrenamiento
+de la cabeza y fine-tuning. Incluye curvas, métricas por clase, matrices de
+confusión y comparación antes/después. Falta ejecutar con el dataset revisado
+y completar el análisis visual de errores reales.
+
+### 12. YOLO con imagen propia — semana 8
+
+Aplica detección de objetos a una imagen personal y compara umbrales de
+confianza. Incluye cajas, conteos y exportaciones; falta guardar la inferencia
+real y su interpretación visual. Los conteos no sustituyen métricas con
+etiquetas de referencia.
+
+### 13. Asistente documental NVIDIA — semana 9
+
+Extrae un PDF y lo utiliza como contexto para responder preguntas mediante
+NVIDIA y Gradio, con historial, streaming y referencias a páginas. Requiere
+una credencial propia y revisar las respuestas reales contra el documento.
+
+### 14. Word2Vec, vecinos y analogías — semana 9
+
+Consulta vecinos de un animal, combina embeddings y representa relaciones
+con PCA 3D. Requiere cargar Google News y completar la interpretación de los
+vecinos, las analogías y las agrupaciones realmente obtenidas.
+
 ## Instalación
 
-Requiere Python 3.10 o superior.
+Los scripts de los ejercicios 1–10 requieren Python 3.10 o superior. Para los
+notebooks 11–14 se recomienda Python 3.12 o Google Colab; cada archivo indica
+sus dependencias e instalación opcional. El `requirements.txt` de los
+ejercicios anteriores no incluye todas las dependencias de estos notebooks.
 
 ### Windows PowerShell
 
@@ -136,7 +174,11 @@ python3 -m venv .venv
 
 ## Ejecución rápida
 
-Los comandos siguientes usan PowerShell. En Linux o macOS sustituya
+Para los talleres 11–14, abre los enlaces **Notebook** de la tabla y sigue
+[las instrucciones de Jupyter/Colab](notebooks/README.md).
+
+Los comandos siguientes corresponden a los ejercicios 1–10 y usan PowerShell.
+En Linux o macOS sustituya
 `.\.venv\Scripts\python.exe` por `./.venv/bin/python`.
 
 ```powershell
@@ -180,6 +222,9 @@ Los comandos que aceptan `--no-gui` guardan resultados sin abrir ventanas.
 Use `--help` en cada ejecutable para consultar sus opciones.
 
 ## Resultados destacados
+
+Estos resultados de referencia corresponden a los ejercicios 1–10. Los
+talleres 11–14 todavía no tienen resultados empíricos guardados.
 
 | Experimento | Resultado verificado |
 |---|---:|
@@ -267,6 +312,14 @@ en `output/`, carpeta ignorada por Git salvo su archivo `.gitkeep`.
 ├── iris_classifier/           # Modelos, métricas y visualizaciones de Iris
 ├── housing_regression/        # Regresores, CV, métricas y visualizaciones
 ├── classification_fit/        # Análisis de subajuste y sobreajuste
+├── notebooks/                 # Talleres 11–14: semanas 8 y 9
+│   ├── README.md              # Instrucciones y estado de cada taller
+│   ├── lecture8/
+│   │   ├── transfer_learning/taller_transfer_learning_datos_propios_keras3.ipynb
+│   │   └── yolo/Lecture_08_Yolo_Intro.ipynb
+│   └── Lecture9/
+│       ├── 05_ejercicio_nvidia_documentos.ipynb
+│       └── tokenization_Introduction.ipynb
 ├── tests/                     # 62 pruebas automáticas
 ├── examples/                  # Imagen de ejemplo para MNIST
 ├── outputs/                   # Resultados de referencia visibles en GitHub
@@ -281,6 +334,9 @@ resultados temporales no se versionan. Se recrean mediante los comandos
 documentados.
 
 ## Pruebas
+
+Esta batería corresponde a los ejercicios 1–10; no certifica la ejecución
+de los modelos y servicios de los notebooks 11–14.
 
 ```powershell
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
